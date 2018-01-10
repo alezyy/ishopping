@@ -1,0 +1,103 @@
+@import "../../fonts/robotoslab/stylesheet.css";
+
+.style-style_blue {
+  color: #f1dec6;
+  .navbar-collapse {
+    background: #095cb1;
+  } 
+  
+  .nav {
+    > li {
+      border-left: 1px outset #003973;
+      border-right: 1px outset #003973;
+      > a {
+        color: #fff !important;   
+        font-family: 'roboto_slabregular';
+        font-size: 13px;
+        font-weight: bold;        
+        padding: 12px 25px;
+        text-decoration: none;
+        text-shadow: none;
+        text-transform: uppercase;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {
+          background: #3270c5 !important;
+          color: #ffea00 !important;
+        }
+      }     
+    }
+  }
+  .dropdown-menu {
+    background: #3270c5;
+    border-radius: 0;
+    margin: 0;
+    min-width: 160px;
+    padding: 0;  
+    .megamenu-vx-row {
+      border-color: #003973;
+      .dropdown-submenu {
+        .dropdown-menu {
+          border-radius: 0;
+        }
+      }
+    }
+    ul {
+      li {
+        > a {
+          border-top:1px outset #003973;
+          color: #fff;
+          float: none;
+          font-family: Arial,Helvetica,sans-serif;
+          line-height: normal;
+          margin: 0 -10px;
+          padding: 8px 10px !important;
+          text-transform: none;
+          &:hover, &:focus {
+            background: #095cb1;
+            color: #ffea00;
+          }
+        }
+        &.active > a {
+          background: #095cb1;
+          color: #ffea00;
+        }
+      }
+    }   
+  }
+}
+
+@media (max-width: 992px) {
+  .style-style_blue {
+    .nav {
+      > li {        
+        > a {
+          border-color: #003973;
+        }
+        &.open {
+          a {
+            border-color: #003973 !important;
+          }
+        }
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {         
+          border-color: #003973;                
+          &:hover, &:focus {
+            border-color: #003973; 
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      background: none;
+      border: none;
+    }
+  } 
+}

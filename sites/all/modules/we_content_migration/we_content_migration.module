@@ -1,0 +1,97 @@
+<?php
+
+/**
+ * The default destination path for migrate content exported via the UI.
+ */
+define('WE_CONTENT_MIGRATION_DEFAULT_EXPORT_PATH', '/sites/default/files');
+
+
+/**
+ * Implements hook_menu().
+ */
+function we_content_migration_menu() {
+  $items = array();
+
+  $items['admin/structure/migrate_content'] = array(
+    'title' => 'Migrate Content',
+    'description' => 'Manage Migrate Content.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('we_content_migration_admin_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_NORMAL_ITEM,
+    'file' => 'we_content_migration.admin.inc',
+  );
+
+  $items['admin/structure/migrate_content/manage'] = array(
+    'title' => 'Manage',
+    'description' => 'Enable and disable entity bundle.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('we_content_migration_admin_form'),
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'file' => 'we_content_migration.admin.inc',
+  );
+
+  $items['admin/structure/migrate_content/create'] = array(
+    'title' => 'Create',
+    'description' => 'Migrate Content Create.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('we_content_migration_export_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => 'we_content_migration.admin.inc',
+    'weight' => 10,
+  );
+
+  $items['admin/structure/migrate_content/settings'] = array(
+    'title' => 'Settings',
+    'description' => 'Adjust settings for using migrate content module.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('we_content_migration_settings_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => "we_content_migration.admin.inc",
+    'weight' => 11,
+  );
+
+  $items['admin/structure/migrate_content/import-from-upload'] = array(
+    'title' => 'Import',
+    'description' => 'Upload zip file to import.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('we_content_migration_import_from_upload_form'),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'file' => "we_content_migration.admin.inc",
+    'weight' => 11,
+  );
+
+  $items['migrate_content/ajaxcallback/%'] = array(
+    'title callback' => 'Check require bundles',
+    'description' => 'Check require bundles.',
+    'page callback' => 'we_content_migration_export_components_json',
+    'page arguments' => array(2),
+    'access callback' => 'user_access',
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_CALLBACK,
+    'file' => 'we_content_migration.admin.inc',
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function we_content_migration_theme() {
+  $base = array(
+    'path' => drupal_get_path('module', 'we_content_migration') . '/theme',
+    'file' => 'theme.inc',
+  );
+
+  $items['we_content_migration_form_package'] = array(
+    'render element' => 'form',
+  ) + $base;
+
+  return $items;
+}

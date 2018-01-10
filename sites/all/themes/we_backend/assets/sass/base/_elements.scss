@@ -1,0 +1,731 @@
+.container-fluid{
+    padding: 0;
+}
+
+.container{
+    padding:{
+        @include sizeRem(top, 25);
+        @include sizeRem(bottom, 25);
+    }
+}
+
+// ====================
+// Reset From
+// ---
+// Fixed Background input when complete 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-transition: "color 9999s ease-out, background-color 9999s ease-out";
+    -webkit-transition-delay: 9999s;
+}
+
+input,
+select {
+    @include form-default-input;
+    outline: none;
+    @include box-shadow(initial);
+}
+
+textarea {
+    @include form-default-input;
+}
+
+select[multiple], select[size]{
+    @include sizeRem(min-height, 180);
+}
+
+.form-select {
+    @include sizeRem(height, 40);
+    @include sizeRem(padding, 9, 2, 20);
+    line-height: 1.42857143;
+    @include input-placeholder{
+        color: $border-color;
+    }
+    width: 100%;
+}
+
+input[type="file"] {
+    @include sizeRem(height, 40);
+    @include sizeRem(padding, 9, 2, 20);
+    line-height: 1.42857143;
+}
+
+.label{
+    color: $title-color;
+}
+
+.form-item,
+.form-actions {
+    margin:{
+        @include sizeRem(bottom, 10);
+        @include sizeRem(top, 10);
+    }
+}
+
+.form-text {
+    @include sizeRem(height, 40);
+    @include sizeRem(padding, 9, 2, 20);
+    line-height: 1.42857143;
+    width: 100%;
+    @include input-placeholder{
+        color: $border-color;
+    }
+    box-shadow: none;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-box-shadow: none;
+}
+
+.form-submit {
+    @include btn;
+    &[id*="property-add"]{
+        position: relative;
+        @include sizeRem(top, 34);
+    }
+    &[type="image"]{
+        background: none;
+        border: 0 none;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+
+
+.form-actions, .buttons{
+    @include display-flex;
+    @include sizeRem(margin-left, -5);
+    @include sizeRem(margin-right, -5);
+    @include align-items(center);
+    .form-submit{
+        @include sizeRem(margin-left, 5);
+        @include sizeRem(margin-right, 5);
+        @include sizeRem(min-width, 150);
+        @include border-radius(20px);
+        background-color: $seafoam-blue-color;
+        border-color: $seafoam-blue-color;
+        color: $white-color;
+        &:hover, &:focus{
+            background-color: darken($seafoam-blue-color, 10%);
+            border-color: darken($seafoam-blue-color, 10%);
+            color: $white-color;
+        }
+    }
+    a#edit-cancel{
+        @include sizeRem(min-width, 150);
+    }
+}
+
+form{
+    > div{
+        > .form-submit{
+            @include sizeRem(min-width, 215);
+        }    
+    }
+}
+
+// .form-item-title, .form-item-name,
+// .form-item-form-key, .form-item-value,
+// .form-item-search-block-form,
+// .form-item-info, .form-item-css-class,
+// .form-item-node-type, .form-item-language {
+//     @include display-flex(inline-flex);
+//     @include flex-direction(column);
+//     @include flex-width-col-xs(360px);
+//     @include sizeRem(margin-right, 15);
+// }
+
+.form-type-textfield, .form-type-select{
+    @include display-flex(inline-flex);
+    @include flex-direction(column);
+    @include flex-width-col-xs(360px);
+    @include sizeRem(margin-right, 15);   
+}
+.form-item-views-exposed-filter-any-label{
+    max-width: inherit;
+}
+
+.form-item-override-dropdown{
+    display: inline;
+}
+
+.draggable{
+    .form-type-textfield, .form-type-select{
+        display: inherit;
+        max-width: inherit;
+        margin-right: 0;
+    }
+}
+
+.field-type-taxonomy-term-reference{
+    @include display-flex(inline-flex);
+    @include flex-direction(column);
+    @include sizeRem(width, 360);
+    @include sizeRem(margin-right, 15); 
+    .form-type-textfield, .form-type-select{
+        display: block;
+        max-width: inherit;
+        @include flex(inherit);
+        margin-right: 0;
+    }
+    table &{
+        display: inherit;
+        @include flex-direction(inherit);
+        width: auto;
+        margin-right: 0;
+    }
+}
+
+
+.field-type-text,
+.form-type-textfield {
+    // @include form-default-label;
+    @extend label;
+}
+
+input[type=radio],
+input[type=checkbox] {
+    position: relative;
+    @include sizeRem(top, -3);
+    @include sizeRem(margin-left, 1);
+}
+
+.more-link {
+    text-align: left;
+    a{
+        @include btn;
+        @include sizeRem(min-width, 150);
+    }
+}
+// ====================
+// Reset Flex
+// ---
+.flexslider {
+    border: 0 none;
+}
+
+// Region Header
+.region-header, #name-and-slogan{
+    display: none;
+}
+
+#logo{
+    position: relative;
+    &:before{
+        content: 'BackendTheme';
+        @include wp-font(font-bold);
+        @include sizeRem(font-size, 30);
+        color: $white-color;
+        display: block;
+    }
+    img{
+        display: none;
+    }
+}
+
+.action-links{
+    padding: 0;
+    @include display-flex;
+    @include justify-content(flex-end);
+    @include align-items(center);
+    @include sizeRem(margin-left, -3);
+    @include sizeRem(margin-right, -3);
+    li{
+        list-style-type: none;
+        @include sizeRem(padding-left, 3);
+        @include sizeRem(padding-right, 3);
+        a{
+            @include btn2;
+            @include display-flex;
+        }
+    }
+}
+.compact-link{
+    padding: 0;
+    @include display-flex;
+    @include justify-content(flex-end);
+    @include align-items(center);
+    @include sizeRem(margin-left, -3);
+    @include sizeRem(margin-right, -3);
+    @include sizeRem(margin-bottom, 15);
+    > *{
+        @include btn2;
+        @include display-flex;
+        @include sizeRem(margin-left, 3);
+        @include sizeRem(margin-right, 3);
+    }
+}
+#content > .section{
+    position: relative;
+}
+
+.tabs{
+    & + .region{
+        @include border-top-left-radius(0);
+    }
+    & ~ .action-links {
+        position: absolute;
+        right: 0;
+        @include sizeRem(top, 68);
+        z-index: 5;
+    }
+    &.tab-secondary{
+        & + .region{
+            @include sizeRem(padding-top, 61);
+        }
+        ul.primary ~ h2.element-invisible ~ ul.secondary{
+            position: absolute;
+            margin: 0;
+            @include sizeRem(top, 123);
+            @include sizeRem(right, 15);
+            border: 0 none;
+            padding: 0;
+        }
+    }
+
+}
+
+
+
+// FieldSet
+/* line 24, ../sass/partials/_form.scss */
+fieldset{
+    background-color: $white-color;
+    border: 1px solid $border-color;
+    @include border-radius(3px);
+    @include sizeRem(padding, 15, 1);
+}
+
+fieldset{
+    @include sizeRem(padding, 70, 4, 15, 15, 15);
+    margin: 0;
+    @include sizeRem(margin-bottom, 15);
+    position: relative;
+}
+
+legend{
+    background: none;
+    border: none;
+    border-bottom: 1px solid $border-color;
+    @include sizeRem(font-size, 14);
+    text-transform: uppercase;
+    @include wp-font(font-bold);
+    left: 0;
+    @include sizeRem(padding, 15, 1);
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+// Form
+.form-item .description{
+    @include sizeRem(margin-top, 5);
+}
+.form-checkboxes .form-item,
+.form-radios .form-item{
+    @include sizeRem(margin-top, 8);
+    @include sizeRem(margin-bottom, 8);
+}
+
+.fieldset-description{
+    @include sizeRem(margin-bottom, 10);
+}
+
+// .fieldset-wrapper{
+//     // @include sizeRem(margin-left, -7);
+//     // @include sizeRem(margin-right, -8);
+//     .form-type-textfield,
+//     .form-type-select{
+//         float: left;
+//         width: 25%;
+//         @include sizeRem(padding-left, 7);
+//         @include sizeRem(padding-right, 8);
+//         margin: 0;
+//         label{
+//             text-transform: capitalize;
+//         }
+//     }
+    
+//     .form-item:not(.form-type-textfield):not(.form-type-select){
+//         clear: both;
+//     }
+
+//     .form-submit{
+//         @include sizeRem(min-width, 140);
+//         @include sizeRem(margin-left, 7);
+//     }
+
+//     .vertical-tabs-panes &{
+//         @include sizeRem(padding, 15);
+//         margin-left: 0;
+//         margin-right: 0;
+//         .form-type-textfield,
+//         .form-type-select{
+//             float: none;
+//             width: auto;
+//             padding-left: 0;
+//             padding-right: 0;
+//             margin-top: 0;
+//             @include sizeRem(margin-bottom, 20);
+//         }
+//     }
+        
+//     #edit-display &,
+//     #edit-regions &{
+//         @include display-flex;
+//         @include flex-wrap(wrap);
+//         .form-item{
+//             @include flex-width-col-xs(100%);
+//             @include sizeRem(padding-left, 7);
+//             @include sizeRem(padding-right, 8);
+//             @include sizeRem(margin-top, 10);
+//             @include sizeRem(margin-bottom, 10);
+//         }
+//         .form-type-textfield,
+//         .form-type-select{
+//             @include flex-width-col-xs(33%);
+//         }
+//         .fieldset-description{
+//             @include flex-width-col-xs(100%);
+//         }
+//     }   
+// }
+
+
+.fieldset-wrapper{
+    @include sizeRem(margin-left, -7);
+    @include sizeRem(margin-right, -8);
+    @include display-flex;
+    @include align-items(flex-start);
+    @include flex-wrap(wrap);
+    > *:not(.filter-guidelines):not(.form-submit):not(.form-wrapper){
+        @include sizeRem(padding-left, 7);
+        @include sizeRem(padding-right, 8);
+    }
+    > *:not(.exposed-filters):not(em):not(.features-export-parent){
+        @include sizeRem(margin-top, 7);
+        @include sizeRem(margin-bottom, 8);
+    }
+    
+    > *{
+        @include flex-width-col-xs(100%);
+    }
+    > table{
+        @include flex(inherit);
+        max-width: inherit;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    // .form-type-textfield, .form-type-select{
+    //     @include display-flex(inline-flex);
+    //     @include flex-direction(column);
+    //     @include flex-width-col-xs(360px);
+    //     @include sizeRem(margin-right, 15);   
+    //     // tr.draggable &{
+    //     //     display: inline-block;
+    //     //     max-width: inherit;
+    //     // }
+    // }
+
+    .form-type-textfield, .form-type-select{
+        margin-right: 0;
+    }
+
+    > .form-wrapper{
+        @include sizeRem(margin-left, 7);
+        @include sizeRem(margin-right, 8);
+        @include flex-width-col-xs(100% - calculateView(15));
+    }
+
+    .form-type-textfield,
+    .form-type-select{
+        @include flex-width-col-xs(25%);
+        label{
+            text-transform: capitalize;
+        }
+    }
+    
+    // .form-item:not(.form-type-textfield):not(.form-type-select){
+    //     clear: both;
+    // }
+
+    .form-submit{
+        @include sizeRem(min-width, 140);
+        @include sizeRem(margin-left, 7);
+        @include flex(inherit);
+    }
+
+    > em{
+        @include flex(inherit);
+    }
+
+    .vertical-tabs-panes &{
+        @include sizeRem(padding, 15);
+        .form-type-textfield,
+        .form-type-select{
+            // float: none;
+            // width: auto;
+            // padding-left: 0;
+            // padding-right: 0;
+            // margin-top: 0;
+            // @include sizeRem(margin-bottom, 20);
+            @include flex-width-col-xs(100%);
+            display: block;
+            input, select{
+                width: auto;
+            }
+        }
+    }
+        
+    #edit-display &,
+    #edit-regions &,
+    #edit-info &{
+        // @include display-flex;
+        // @include flex-wrap(wrap);
+        // .form-item{
+        //     @include flex-width-col-xs(100%);
+        //     @include sizeRem(padding-left, 7);
+        //     @include sizeRem(padding-right, 8);
+        //     @include sizeRem(margin-top, 10);
+        //     @include sizeRem(margin-bottom, 10);
+        // }
+        .form-type-textfield,
+        .form-type-select{
+            @include flex-width-col-xs(33.33333%);
+        }
+        // .fieldset-description{
+        //     @include flex-width-col-xs(100%);
+        // }
+    }
+    .dependent-options{
+        .form-type-textfield,
+        .form-type-select{
+            display: block;
+            max-width: inherit;
+            @include flex(inherit);
+            @include sizeRem(margin-right, 15);
+        }
+    }
+
+}
+
+
+.container-inline{
+
+    .fieldset-wrapper{
+        @include display-flex;
+    }
+    > .form-wrapper{
+        @include flex(1);
+    }
+    > .fieldset-wrapper {
+        @include sizeRem(margin-left, -7);
+        @include sizeRem(margin-right, -8);
+    }
+    div, label{
+        @include display-flex(inline-flex);
+    }
+    .fieldset-wrapper > *{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .form-actions .form-submit{
+        min-width: inherit;
+    }
+}
+
+.exposed-filters {
+    > .form-wrapper {
+        @include sizeRem(margin-left, -7);
+        @include sizeRem(margin-right, -8);
+    }
+    .filters{
+        margin-right: 0;
+        width: 75%;
+        @include display-flex;
+    }
+    .form-actions {
+        float: left;
+        @include sizeRem(padding-left, 7);
+        @include sizeRem(padding-right, 8);
+        width: 25%;
+        @include sizeRem(margin-top, 25);
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .form-submit{
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .form-select{
+        width: 100%;
+    }
+    .form-submit{
+        width: 100%;
+    }
+    .form-item{
+        @include flex-width-col-xs(33.33333%);
+        @include sizeRem(padding-left, 7);
+        @include sizeRem(padding-right, 8);
+        label{
+            display: block;
+            float: none;
+            text-transform: capitalize;
+            width: auto;
+            @include wp-font(font-medium);
+        }
+    }
+}
+
+#ctools-export-ui-list-form{
+    .form-item{
+        @include sizeRem(padding-right, 8);
+        float: none;
+        margin-right: 0;
+        @include sizeRem(margin-top, 7);
+        @include sizeRem(margin-bottom, 8);
+    }
+    .form-submit{
+        @include sizeRem(margin-top, 31);
+    }
+}
+.ctools-export-ui-row{
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include sizeRem(margin-left, -7);
+    @include sizeRem(margin-right, -8);
+    @include align-items(flex-start);
+    
+    > *{
+        @include flex-width-col-xs(100%);
+        @include sizeRem(padding-left, 7);
+        @include sizeRem(padding-right, 8);
+    }
+
+    .form-type-textfield,
+    .form-type-select{
+        @include flex-width-col-xs(20%);
+        label{
+            text-transform: capitalize;
+        }
+    }
+
+    .form-submit{
+        @include sizeRem(min-width, 120);
+        @include sizeRem(margin-left, 7);
+        @include flex(inherit);
+    }
+}
+
+#features-export-form{
+    .features-refresh-wrapper{
+        display: none;
+    }
+}
+
+#features-export-info, #features-export-advanced{
+    .fieldset-wrapper {
+        .form-type-textfield, .form-type-select{
+            @include flex-width-col-xs(100%);
+        }
+    }    
+}
+
+#features-filter {
+    .fieldset-wrapper {
+        @include sizeRem(margin-left, -7);
+        @include sizeRem(margin-right, -8);
+        .form-type-textfield,
+        .form-type-select{
+            @include flex-width-col-xs(50%);
+        }
+        > *:not(span){
+            @include sizeRem(padding-left, 7);
+            @include sizeRem(padding-right, 8);
+        }
+    }
+    span{
+        @include btn;
+        @include flex(inherit);
+        @include sizeRem(min-width, 120);
+        @include sizeRem(margin-top, 27);
+
+    }
+    input[size="60"].form-text{
+        width: 100%;
+    }
+}
+
+#features-legend .fieldset-wrapper span{
+    @include flex(inherit);
+    @include sizeRem(margin-left, 7);
+    @include sizeRem(margin-right, 8);
+}
+
+
+#simplenews-admin-filter {
+    .form-select, .form-text{
+        width: 100%;
+    }
+    .form-item{
+        margin: 0;
+        label{
+            line-height: $line-height-default;
+        }
+    }
+    .spacer{
+        @include sizeRem(margin-top, 25);
+        @include flex(inherit);
+        margin-left: 0;
+    }
+}
+
+.token-tree {
+    @include sizeRem(font-size, 14);
+    margin-left: 0;
+    td, th {
+        padding-bottom: 8px;
+        padding-top: 8px;
+    }
+}
+
+.compact-link,
+.tabledrag-toggle-weight-wrapper {
+    @include sizeRem(margin-bottom, 15);
+    a{
+        @include btn2;
+        color: $white-color !important;
+    }
+}
+
+.filter-wrapper .form-item{
+    padding: 0;
+    @include sizeRem(padding-left, 7);
+    @include sizeRem(padding-right, 8);
+}
+
+.filter-help{
+    text-align: right;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+
+// table{
+//     .form-submit{
+//         display: inline-block;
+//         padding: 0;
+//         margin: 0;
+//         color: $black-color;
+//         background-color: transparent;
+//         border :0 none;
+//         min-width: inherit;
+//     }
+// }
+
+

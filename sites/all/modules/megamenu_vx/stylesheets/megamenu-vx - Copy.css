@@ -1,0 +1,121 @@
+/* line 2, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu {
+  padding: 0;
+}
+/* line 4, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu ul {
+  padding: 0;
+}
+/* line 6, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu ul > li {
+  list-style: none;
+}
+/* line 8, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu ul > li > a {
+  border-top: 1px solid #eee;
+  display: block;
+  line-height: 20px;
+  font-weight: normal;
+  padding: 5px 0;
+}
+/* line 16, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu ul > li:first-child > a {
+  border-top: none;
+}
+/* line 22, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu ul .submenu-group > a {
+  padding-left: 10px;
+}
+/* line 27, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row {
+  border-top: 1px solid #eee;
+}
+/* line 29, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row:first-child {
+  border-top: none;
+}
+/* line 32, ../sass/megamenu-vx - Copy.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+  padding: 10px;
+}
+
+@media (max-width: 992px) {
+  /* line 42, ../sass/megamenu-vx - Copy.scss */
+  .collapse.in .navbar-collapse.collapse,
+  .collapsing .navbar-collapse.collapse {
+    display: block !important;
+  }
+  /* line 45, ../sass/megamenu-vx - Copy.scss */
+  .collapse.in .navbar-toggle,
+  .collapsing .navbar-toggle {
+    display: none !important;
+  }
+
+  /* line 49, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx {
+    position: relative;
+  }
+  /* line 51, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-header {
+    float: none;
+  }
+  /* line 53, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-header .navbar-toggle {
+    display: block;
+  }
+  /* line 58, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-collapse.collapse {
+    display: none !important;
+  }
+  /* line 61, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-collapse.collapsing {
+    display: block;
+  }
+  /* line 64, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-collapse.collapse.in {
+    display: block !important;
+  }
+  /* line 67, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar {
+    min-height: 0;
+  }
+  /* line 72, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .nav > li {
+    display: block;
+    float: none;
+  }
+  /* line 75, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .nav > li > a {
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  /* line 82, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .nav > li:first-child > a {
+    border-top: none;
+  }
+  /* line 88, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .navbar-collapse {
+    border-top: none;
+  }
+  /* line 91, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .dropdown-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+    display: block !important;
+    float: none;
+    left: auto;
+    position: static !important;
+    top: auto;
+    width: 100% !important;
+    transform: none !important;
+  }
+  /* line 103, ../sass/megamenu-vx - Copy.scss */
+  .megamenu-vx .dropdown-menu .dropdown-submenu a {
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

@@ -1,0 +1,12 @@
+name = Mega Menu VX
+description = Menu solutions for Drupal
+package = megamenu_vx
+version = VERSION
+core = 7.x
+
+files[] = megamenu_vx.inc
+files[] = megamenu_vx.themes.inc
+files[] = megamenu_vx.ajax.inc
+files[] = megamenu_vx.admin.inc
+files[] = megamenu_vx.module
+configure = admin/structure/megamenu-vx

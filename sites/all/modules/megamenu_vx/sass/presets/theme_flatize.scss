@@ -1,0 +1,116 @@
+@import "../../fonts/robotoslab/stylesheet.css";
+
+.style-theme_flatize {
+  color: #fff;  
+  .nav {
+    > li {     
+      > a {        
+        color: #333 !important;
+        font-family: 'roboto_slabregular';
+        font-size: 12px;
+        font-weight: 100;
+        padding: 20px;
+        position: relative;
+        text-transform: uppercase;
+      }   
+      &:hover, &:focus, &.open, &.active {
+        > a {
+          background: none !important;
+          box-shadow: none;
+          color: #1abc9c !important;
+        }
+      }     
+    }
+  }
+  .dropdown-menu {
+    background-color: #181818;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    font-size: 12px;
+    margin: 0;
+    &:after {
+      height: 0;
+      border-bottom: 6px solid #181818;
+      border-left: 5px solid rgba(0,0,0,0);
+      border-right: 5px solid rgba(0,0,0,0);
+      content: "";
+      left: 35px;
+      position: absolute;
+      top: -6px;
+      width: 0;
+    }     
+    .megamenu-vx-row {
+      border-color: #282828;
+      .megamenu-vx-col {
+        padding: 15px 20px;
+        .dropdown-submenu {
+          .dropdown-menu {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        > a {
+          border-top: none;
+          color: #fff;
+          font-size: 12px;         
+          padding: 5xp 0 !important;
+          text-transform: none;
+          &:hover, &:focus {
+            color: #1abc9c;
+          }
+        }
+        &.active > a {
+          color: #1abc9c;
+        }
+      }
+    }   
+  }
+}
+
+.vertical {  
+  .dropdown-menu {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .style-theme_flatize {
+    .navbar-collapse {
+      background: #000;
+    }
+    .nav {
+      > li {        
+        > a {
+          border-color: #282828;
+          color: #fff !important;
+          padding: 10px 20px;
+        }
+        &:hover, &:focus, &.open, &.active {
+          > a {         
+            background: #1abc9c !important;
+            border-color: #282828 !important; 
+            box-shadow: none; 
+            color: #fff !important;              
+            &:hover, &:focus {
+              border-color: #282828 !important; 
+              color: #fff !important;
+            }
+          }
+        }
+      }      
+    }
+    .dropdown-menu {
+      background: none;
+      border: none;
+      &:after {
+        display: none;
+      }
+    }
+  } 
+}

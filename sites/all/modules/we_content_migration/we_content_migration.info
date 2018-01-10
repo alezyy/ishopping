@@ -1,0 +1,11 @@
+name = "Content Migration"
+description = "Migrate Content for Drupal 7."
+core = 7.x
+package = "Content Migration"
+
+; Information added by Drupal.org packaging script on 2017-07-10
+version = "7.x-1.x-dev"
+core = "7.x"
+project = "we_content_migration"
+datestamp = "1499677744"
+

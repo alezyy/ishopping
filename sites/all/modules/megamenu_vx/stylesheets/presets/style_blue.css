@@ -1,0 +1,99 @@
+@import url(../../fonts/robotoslab/stylesheet.css);
+/* line 3, ../../sass/presets/style_blue.scss */
+.style-style_blue {
+  color: #f1dec6;
+}
+/* line 5, ../../sass/presets/style_blue.scss */
+.style-style_blue .navbar-collapse {
+  background: #095cb1;
+}
+/* line 10, ../../sass/presets/style_blue.scss */
+.style-style_blue .nav > li {
+  border-left: 1px outset #003973;
+  border-right: 1px outset #003973;
+}
+/* line 13, ../../sass/presets/style_blue.scss */
+.style-style_blue .nav > li > a {
+  color: #fff !important;
+  font-family: 'roboto_slabregular';
+  font-size: 13px;
+  font-weight: bold;
+  padding: 12px 25px;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+/* line 23, ../../sass/presets/style_blue.scss */
+.style-style_blue .nav > li:first-child {
+  border-left: none;
+}
+/* line 26, ../../sass/presets/style_blue.scss */
+.style-style_blue .nav > li:last-child {
+  border-right: none;
+}
+/* line 30, ../../sass/presets/style_blue.scss */
+.style-style_blue .nav > li:hover > a, .style-style_blue .nav > li:focus > a, .style-style_blue .nav > li.open > a, .style-style_blue .nav > li.active > a {
+  background: #3270c5 !important;
+  color: #ffea00 !important;
+}
+/* line 37, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu {
+  background: #3270c5;
+  border-radius: 0;
+  margin: 0;
+  min-width: 160px;
+  padding: 0;
+}
+/* line 43, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu .megamenu-vx-row {
+  border-color: #003973;
+}
+/* line 46, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu .megamenu-vx-row .dropdown-submenu .dropdown-menu {
+  border-radius: 0;
+}
+/* line 53, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu ul li > a {
+  border-top: 1px outset #003973;
+  color: #fff;
+  float: none;
+  font-family: Arial,Helvetica,sans-serif;
+  line-height: normal;
+  margin: 0 -10px;
+  padding: 8px 10px !important;
+  text-transform: none;
+}
+/* line 62, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu ul li > a:hover, .style-style_blue .dropdown-menu ul li > a:focus {
+  background: #095cb1;
+  color: #ffea00;
+}
+/* line 67, ../../sass/presets/style_blue.scss */
+.style-style_blue .dropdown-menu ul li.active > a {
+  background: #095cb1;
+  color: #ffea00;
+}
+
+@media (max-width: 992px) {
+  /* line 80, ../../sass/presets/style_blue.scss */
+  .style-style_blue .nav > li > a {
+    border-color: #003973;
+  }
+  /* line 84, ../../sass/presets/style_blue.scss */
+  .style-style_blue .nav > li.open a {
+    border-color: #003973 !important;
+  }
+  /* line 90, ../../sass/presets/style_blue.scss */
+  .style-style_blue .nav:hover > a, .style-style_blue .nav:focus > a, .style-style_blue .nav.open > a, .style-style_blue .nav.active > a {
+    border-color: #003973;
+  }
+  /* line 92, ../../sass/presets/style_blue.scss */
+  .style-style_blue .nav:hover > a:hover, .style-style_blue .nav:hover > a:focus, .style-style_blue .nav:focus > a:hover, .style-style_blue .nav:focus > a:focus, .style-style_blue .nav.open > a:hover, .style-style_blue .nav.open > a:focus, .style-style_blue .nav.active > a:hover, .style-style_blue .nav.active > a:focus {
+    border-color: #003973;
+  }
+  /* line 98, ../../sass/presets/style_blue.scss */
+  .style-style_blue .dropdown-menu {
+    background: none;
+    border: none;
+  }
+}

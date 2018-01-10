@@ -1,0 +1,126 @@
+@import url(../../fonts/oswald_regular/stylesheet.css);
+/* line 3, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site {
+  color: #ad9457;
+}
+/* line 5, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .navbar-collapse {
+  background: url("../../images/presets/corporate-site/bg-menu.gif") repeat-x 0 100%;
+  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.25);
+  height: 41px;
+}
+/* line 11, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .nav > li {
+  background: url("../../images/presets/corporate-site/bg-line-menu.gif") no-repeat 0 0;
+  padding-left: 2px;
+}
+/* line 14, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .nav > li > a {
+  color: #fff !important;
+  font-family: Corbel, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  text-shadow: none;
+  text-transform: uppercase;
+  padding: 9px 20px;
+}
+/* line 22, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .nav > li:first-child {
+  background: none;
+  padding-left: 0;
+}
+/* line 27, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .nav > li:hover > a, .style-theme_weebpal_corporate_site .nav > li:focus > a, .style-theme_weebpal_corporate_site .nav > li.open > a, .style-theme_weebpal_corporate_site .nav > li.active > a {
+  background: url("../../images/presets/corporate-site/bg-menu-active.gif") repeat-x 0 100% !important;
+  color: #fff !important;
+}
+/* line 34, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .dropdown-menu {
+  border: 2px solid #625129;
+  background: url(../../images/presets/corporate-site/bg-submenu.gif) repeat-x 0 0 #010101;
+  border-top-width: 1px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  min-width: 160px;
+}
+/* line 40, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .dropdown-menu .megamenu-vx-row {
+  border-color: #625129;
+}
+/* line 45, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .dropdown-menu ul li > a {
+  border-top-color: #625129;
+  color: #ad9457;
+  float: none;
+  font-family: Corbel, Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0 -10px;
+  padding: 8px 10px !important;
+  text-transform: none;
+}
+/* line 55, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .dropdown-menu ul li > a:hover, .style-theme_weebpal_corporate_site .dropdown-menu ul li > a:focus {
+  color: #e0c06f;
+}
+/* line 59, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.style-theme_weebpal_corporate_site .dropdown-menu ul li.active > a {
+  color: #e0c06f;
+}
+
+/* line 68, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.vertical .navbar-collapse {
+  background: none;
+}
+/* line 72, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.vertical .nav > li {
+  background: none;
+  padding: 0;
+}
+/* line 75, ../../sass/presets/theme_weebpal_corporate_site.scss */
+.vertical .nav > li > a {
+  color: #a22c08 !important;
+}
+
+@media (max-width: 992px) {
+  /* line 84, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .navbar-collapse {
+    background: #171717;
+  }
+  /* line 88, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li {
+    background: none;
+  }
+  /* line 90, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li > a {
+    border-color: #0c0c0c;
+    color: #696969 !important;
+    text-shadow: none;
+  }
+  /* line 96, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li:hover > a, .style-theme_weebpal_corporate_site .nav > li:focus > a, .style-theme_weebpal_corporate_site .nav > li.open > a, .style-theme_weebpal_corporate_site .nav > li.active > a {
+    background: #2d2d2d !important;
+    border-color: #0c0c0c;
+    color: #fff !important;
+  }
+  /* line 100, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li:hover > a:hover, .style-theme_weebpal_corporate_site .nav > li:hover > a:focus, .style-theme_weebpal_corporate_site .nav > li:focus > a:hover, .style-theme_weebpal_corporate_site .nav > li:focus > a:focus, .style-theme_weebpal_corporate_site .nav > li.open > a:hover, .style-theme_weebpal_corporate_site .nav > li.open > a:focus, .style-theme_weebpal_corporate_site .nav > li.active > a:hover, .style-theme_weebpal_corporate_site .nav > li.active > a:focus {
+    border-color: #0c0c0c;
+  }
+  /* line 105, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li .dropdown-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  /* line 110, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+    border-top: 1px solid #0c0c0c;
+  }
+  /* line 112, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li .dropdown-menu .megamenu-vx-row .megamenu-vx-col:first-child {
+    border-top: none;
+  }
+  /* line 118, ../../sass/presets/theme_weebpal_corporate_site.scss */
+  .style-theme_weebpal_corporate_site .nav > li .dropdown-menu li > a {
+    margin: 0;
+  }
+}

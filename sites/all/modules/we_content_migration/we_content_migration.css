@@ -1,0 +1,82 @@
+#migrate_content-export-form .fieldset-content.fieldset-wrapper {
+  padding-top: 5px;
+}
+
+#migrate-content-export-advanced {
+    width: 49%;
+    float: left;
+    position: relative;
+}
+
+#migrate-content-export-wrapper {
+    width: 49%;
+    float: right;
+    clear: both;
+    position: relative;
+}
+
+#migrate-content-field-wrapper {
+    width: 49%;
+    float: right;
+    clear: both;
+    position: relative;
+}
+
+fieldset {
+    border: 1px solid #ccc;
+    padding: 2.5em 0 0 0;
+    position: relative;
+    margin: 1em 0;
+}
+
+.migrate-content-export-component {
+    background: #F3F8FB;
+    margin: 0.5em 0;
+    font-weight: normal;
+    font-size: 12px;
+    top: 0;
+}
+
+.migrate-content-field-component {
+    background: #c6deec;
+    margin: 0.5em 0;
+    font-weight: normal;
+    font-size: 12px;
+    top: 0;
+}
+
+div.migrate-content-export-list {
+    font-weight: normal;
+    font-size: 12px;
+    border: 1px solid #CCC;
+    border-top-width: 0;
+    overflow: hidden;
+}
+
+#migrate-content-export-wrapper .component-added .form-type-checkbox {
+    font-weight: bold;
+    background: #EEE;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    float: left;
+    white-space: normal;
+    margin: 2px 5px;
+    padding: 0 5px;
+
+}
+
+#migrate-content-export-wrapper div.component-added label.option {
+    font-weight: bold;
+}
+fieldset.migrate-content-export-component .fieldset-wrapper .form-checkboxes {
+  max-height: 20em;
+  overflow: auto;
+  min-width: 100px;
+}
+
+fieldset.migrate-content-export-component.collapsed {
+    background: #F3F8FB;
+}
+fieldset.migrate-content-field-component.collapsed {
+    background: #c6deec;
+}

@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+CSS
+-------------------------------------------------------------------*/
+
+// Bootstraps
+@import "includes/bootstrap";
+
+// Font Awesome
+@import "includes/font-awesome";
+@import "includes/font-simpleline";
+
+// Library Compass Reference 
+// (http://compass-style.org/reference/compass/)
+// --------------------
+@import "compass/css3";
+
+// Core variables and mixins
+@import "config/variables";
+@import "config/mixins";
+
+// Fonts
+@import "base/fonts";
+
+// Base
+@import "base/base";
+@import "base/elements";
+@import "base/reset";
+
+// Skins
+@import "base/skincolor";
+
+// Partials
+@import "partials/view";
+@import "partials/block";
+@import "partials/page";
+@import "partials/responsive";
+@import "partials/print";
+
+

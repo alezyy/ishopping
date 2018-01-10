@@ -1,0 +1,158 @@
+// ====================
+// Section, Region, Aside, Article, Node, ....
+// ---
+// Header
+#header{
+    background-color: $link-color;
+    color: $white-color;
+    // position: fixed;
+    width: 100%;
+    z-index: 99;
+    // & + *{
+    //     @include sizeRem(padding-top, 80);
+    // }
+    .section{
+        @include display-flex;
+        @include align-items(center);
+        @include sizeRem(min-height, 80);
+        @include sizeRem(height, 10);
+    
+    }
+}
+div.messages{
+    @include sizeRem(margin-left, 50);
+    @include sizeRem(margin-right, 50);
+}
+
+
+// Main
+#main-wrapper{
+    @include flex(1 1 auto);
+    .section{
+        @include sizeRem(padding-bottom, 30);
+        overflow: hidden;
+    }
+}
+
+#main div.block > h2 {
+    border-bottom: 1px solid $border-color;
+    @include sizeRem(font-size, 14);
+    @include wp-font(font-bold);
+    margin-top: 0;
+    @include sizeRem(margin-left, -15);
+    @include sizeRem(margin-right, -15);
+    @include sizeRem(padding, 10, 4, 15, 24, 15);
+    text-transform: uppercase;
+    color: $title-color;
+}
+
+// Footer
+#footer{
+    border-top: 1px solid $border-color;
+    // position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $white-color;
+    @include sizeRem(font-size, 13);
+    @include wp-font(font-bold);
+    color: $body-color;
+    z-index: 99;
+    a{
+        color: $link-color;
+        &:hover, &:focus{
+            color: $title-color;
+        }
+    }
+
+    .region{
+        border: 0 none;
+        @include border-radius(0);
+        padding: 0;
+        background-color: transparent;
+        margin-bottom: 0;
+        @include display-flex;
+        @include align-items(center);
+        @include sizeRem(min-height, 70);
+        @include sizeRem(height, 10);
+        > *{
+            @include flex-grow(1);
+            &:last-child{
+                @include display-flex;
+                @include justify-content(flex-end);
+            }
+        }
+    }
+}
+// Region
+#page{
+    // @include sizeRem(padding-bottom, 70);
+    @include display-flex;
+    @include flex-direction(column);
+    min-height: 100vh;
+    > *{
+        @include sizeRem(padding-right, 50);
+        @include sizeRem(padding-left, 50);
+    }
+}
+.region{
+    border: 1px solid $border-color;
+    @include border-radius(3px);
+    @include sizeRem(padding, 15, 1);
+    background-color: $white-color;
+    @include sizeRem(margin-bottom, 15);
+    @at-root{
+        .region-header{
+            @include border-radius(0);
+            padding: 0;
+            background-color: $link-color;
+            color: $link-text-color;
+            border: 0 none;
+        }    
+    }
+	p{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+    div.messages{
+        margin-left: 0;
+        margin-right: 0;
+        @include sizeRem(margin-bottom, 15);
+    }
+}
+
+// ====================
+// Pages: about us, front, not-front, ....
+// ---
+.page{
+    @at-root{
+        // About Us Page
+        // Home Page
+     	// ....   
+    }    
+}
+
+#block-admin-display-form{
+    overflow: hidden;
+    .sticky-header{
+        display: none !important;
+    }
+}
+
+// #header, #footer, #breadcrumb{
+//     display: none;
+
+// }
+
+// #header + *{
+//     padding-top: 0;
+// }
+
+.page-admin-modules{
+    #footer{
+        display: none;
+    }
+}

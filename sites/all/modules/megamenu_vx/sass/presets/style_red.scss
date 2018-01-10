@@ -1,0 +1,102 @@
+@import "../../fonts/robotoslab/stylesheet.css";
+
+.style-style_red {
+  color: #f1dec6;
+  .navbar-collapse {
+    background: #79001c;
+  } 
+  
+  .nav {
+    > li {
+      border-left: 1px outset #68000e;
+      border-right: 1px outset #68000e;
+      > a {
+        color: #f1dec6 !important;   
+        font-family: 'roboto_slabregular';
+        font-size: 13px;
+        font-weight: bold;        
+        padding: 12px 25px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:last-child {
+        border-right: none;
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {
+          background: #4c0012 !important;
+          color: #fff;
+        }
+      }     
+    }
+  }
+  .dropdown-menu {
+    background: #4c0012;
+    border-radius: 0;
+    margin: 0;
+    min-width: 160px;
+    padding: 0;  
+    .megamenu-vx-row {
+      border-color: #68000e;
+      .dropdown-submenu {
+        .dropdown-menu {
+          border-radius: 0;
+        }
+      }
+    }
+    ul {
+      li {
+        > a {
+          border-top-color: #68000e;
+          color: #f1dec6;
+          float: none;
+          font-family: Arial,Helvetica,sans-serif;
+          line-height: normal;
+          margin: 0 -10px;
+          padding: 8px 10px !important;
+          text-transform: none;
+          &:hover, &:focus {
+            background: #79001c;
+            color: #fff;
+          }
+        }
+        &.active > a {
+          background: #79001c;
+          color: #fff;
+        }
+      }
+    }   
+  }
+}
+
+@media (max-width: 992px) {
+  .style-style_red {
+    .nav {
+      > li {        
+        > a {
+          border-color: #68000e;
+        }
+        &.open {
+          a {
+            border-color: #68000e !important;
+          }
+        }
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {         
+          border-color: #68000e;                
+          &:hover, &:focus {
+            border-color: #68000e; 
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      background: none;
+      border: none;
+    }
+  } 
+}

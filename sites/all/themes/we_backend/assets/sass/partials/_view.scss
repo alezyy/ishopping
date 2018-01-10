@@ -1,0 +1,17 @@
+// ====================
+// View lists : view, view-frontpage, view-view ,view-type-[class], .....
+// ---
+.view{
+	.views-field{
+		& ~ .views-field{
+			@include sizeRem(margin-top, 10px);	
+		}
+	}
+	@at-root{
+		// view a
+		// view b
+		// ...
+	}
+}
+
+

@@ -1,0 +1,333 @@
+<?php
+include_once drupal_get_path('module', 'megamenu_vx') . '/megamenu_vx.inc';
+include_once drupal_get_path('module', 'megamenu_vx') . '/megamenu_vx.themes.inc';
+include_once drupal_get_path('module', 'megamenu_vx') . '/megamenu_vx.admin.inc';
+
+function megamenu_vx_menu() {
+  $items['admin/structure/megamenu-vx/save_config'] = array(
+    'title' => 'Request',
+    'page callback' => 'megamenu_vx_ajax_save_config',
+    'access arguments' => array('administer megamenu_vx'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'megamenu_vx.ajax.inc',
+  );    
+
+  $items['admin/structure/megamenu-vx/load_menu'] = array(
+    'title' => 'Request',
+    'page callback' => 'megamenu_vx_ajax_load_menu',
+    'access arguments' => array('administer megamenu_vx'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'megamenu_vx.ajax.inc',
+  );    
+
+  $items['admin/structure/megamenu-vx/load_block'] = array(
+    'title' => 'Request',
+    'page callback' => 'megamenu_vx_ajax_load_block',
+    'access arguments' => array('administer megamenu_vx'),
+    'type' => MENU_SUGGESTED_ITEM,
+    'file' => 'megamenu_vx.ajax.inc',
+  );    
+
+  $items['admin/structure/megamenu-vx'] = array(
+    'title' => 'Mega Menu VX', 
+    'description' => t('Mega Menu VX'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('megamenu_vx_admin_settings'),
+    'access arguments' => array('administer megamenu_vx'),
+    'file' => 'megamenu_vx.admin.inc', 
+  );
+
+  $items['admin/structure/megamenu-vx/%megamenu_vx_menu_name'] = array(
+    'title' => 'Config Mega Menu VX', 
+    'description' => t('Config Mega Menu VX'), 
+    'page callback' => 'drupal_get_form', 
+    'page arguments' => array ('megamenu_vx_configure_form', 3),
+    'access arguments' => array(3),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer megamenu_vx'),
+    'file' => 'megamenu_vx.admin.inc', 
+  );
+
+  $items['admin/structure/megamenu-vx/%megamenu_vx_menu_name/config'] = array(
+    'title' => 'Config Mega Menu VX',
+    'weight' => -10,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+  );
+
+  $items['admin/structure/megamenu-vx/%megamenu_vx_menu_name/convert'] = array(
+    'title' => 'Import from TB MegaMenu', 
+    'description' => t('Convert config TB MegaMenu to MegaMenu-VX'), 
+    'page callback' => 'drupal_get_form', 
+    'page arguments' => array ('megamenu_vx_convert_from_tb_menu_confirm', 3),
+    'access arguments' => array(3),
+    'type' => MENU_CALLBACK,
+    'access arguments' => array('administer megamenu_vx'),
+    'file' => 'megamenu_vx.admin.inc', 
+  );
+
+  return $items;
+}
+
+function megamenu_vx_permission() {
+  return array(
+    'administer megamenu_vx' => array(
+      'title' => t('Administer Mega Menu VX'),
+    ),
+  );
+}
+
+function megamenu_vx_theme($existing, $type, $theme, $path) {
+  $items = array();
+  $items['megamenu_vx'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'content' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'megamenu-vx',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx',
+    ),    
+  );
+
+  $items['megamenu_vx_ul'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'level' => NULL,
+      'items' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ), 
+    'template' => 'megamenu-vx-ul',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_ul',
+    ),
+  );
+
+  $items['megamenu_vx_li'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'a_classes' => array(),
+      'item' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'submenu' => NULL,
+      'section' => 'frontend',
+    ), 
+    'template' => 'megamenu-vx-li',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_li',
+    ),
+  );
+
+  $items['megamenu_vx_submenu'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'parent_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'megamenu-vx-submenu',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_submenu',
+    ),
+  );
+
+  $items['megamenu_vx_row'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'row' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'megamenu-vx-row',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_row',
+    ),
+  );
+
+  $items['megamenu_vx_col'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'col' => NULL,
+      'parent' => NULL,
+      'level' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ),
+    'template' => 'megamenu-vx-col',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_col',
+    ),
+  );
+
+  $items['megamenu_vx_subul'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'col' => NULL,
+      'level' => NULL,
+      'items' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ), 
+    'template' => 'megamenu-vx-subul',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_subul',
+    ),
+  );
+  /*
+  $items['megamenu_vx_subul'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'col' => NULL,
+      'level' => NULL,
+      'items' => NULL,
+      'menu_config' => NULL,
+      'block_config' => NULL,
+      'trail' => NULL,
+      'section' => 'frontend',
+    ), 
+    'template' => 'megamenu-vx-subul',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_subul',
+    ),
+  );*/
+
+  $items['megamenu_vx_block'] = array(
+    'variables' => array(
+      'menu_name' => NULL,
+      'block_key' => NULL,
+      'section' => 'frontend',
+      'showblocktitle' => 1,
+    ), 
+    'template' => 'megamenu-vx-block',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_block',
+    ),
+  );
+
+  $items['megamenu_vx_admin_settings'] = array(
+    'render element' => 'form',
+  );
+
+  $items['megamenu_vx_backend'] = array(
+    'variables' => array(
+      'blocks' => NULL,
+      'menu_name' => NULL,
+      'menu_content' => NULL,
+    ),
+    'template' => 'megamenu-vx-backend',
+    'path' => $path . '/templates',
+    'preprocess functions' => array(
+      'template_preprocess',
+      'template_preprocess_megamenu_vx_backend',
+    ),    
+  );
+
+  return $items;
+}
+
+/*
+ * Implementation of hook_block_view()
+ */
+function megamenu_vx_block_view($delta = 0) {
+  drupal_add_js(drupal_get_path('module', 'megamenu_vx') . '/bootstrap/js/bootstrap.js');
+  megamenu_vx_add_css(drupal_get_path('module', 'megamenu_vx') . '/font-awesome/css/font-awesome.css');
+  megamenu_vx_add_css(drupal_get_path('module', 'megamenu_vx') . '/bootstrap/css/bootstrap.css');
+  megamenu_vx_add_css(drupal_get_path('module', 'megamenu_vx') . '/bootstrap/css/bootstrap-theme.css');    
+  megamenu_vx_add_css(drupal_get_path('module', 'megamenu_vx') . '/stylesheets/base.css');
+  megamenu_vx_add_css(drupal_get_path('module', 'megamenu_vx') . '/stylesheets/megamenu-vx.css'); 
+  drupal_add_js(drupal_get_path('module', 'megamenu_vx') . '/js/megamenu_vx-frontend.js');
+  return array('content' => array(
+    '#type' => 'markup',
+    '#markup' =>  theme('megamenu_vx', array('menu_name' => $delta))
+  ));
+}
+
+/*
+ * Implementation of hook_block_info()
+ */
+function megamenu_vx_block_info() {
+  $menus = megamenu_vx_get_megamenus();
+  $blocks = array();
+  foreach($menus as $menu) {
+    $blocks[$menu->menu_name] = array(
+      'info' => t('Mega Menu VX') . ': ' . $menu->title, 'cache' => DRUPAL_NO_CACHE 
+    );
+  }
+  return $blocks;
+}
+
+function megamenu_vx_menu_name_load($megamenu_vx_menu_name) {
+  return array($megamenu_vx_menu_name);
+}
+
+function megamenu_vx_theme_registry_alter(&$theme_registry) {
+  if(isset($theme_registry['megamenu_vx_submenu'])) {
+    $submenu_registry = $theme_registry['megamenu_vx_submenu'];
+    $cache = array('megamenu_vx_submenu' => $submenu_registry);
+    $templates = megamenu_vx_find_hook_templates($cache, drupal_get_path('module', "megamenu_vx") . "/templates/submenu-types");
+    foreach($templates as $hook => $info) {
+      if (!isset($theme_registry[$hook])) {
+        $new_hook = $submenu_registry;
+        $new_hook['path'] = $info['path'];
+        $new_hook['template'] = str_replace("_", "-", $hook);
+        $theme_registry[$hook] = $new_hook;
+      }
+    }
+  }
+}
+
+function megamenu_vx_block_view_alter(&$data, $block) {
+  if (isset($data['content']) && is_array($data['content']) && $block->module == 'megamenu_vx') {
+    $contextual_links = array(
+      'admin/structure/menu/manage',
+      array($block->delta),
+    );
+
+    $data['content']['#contextual_links']['menu_config'] = $contextual_links;
+
+    $contextual_links = array(
+      'admin/structure/megamenu-vx',
+      array($block->delta),
+    );
+
+    $data['content']['#contextual_links']['megamenu_vx_config'] = $contextual_links;
+    
+  }
+}

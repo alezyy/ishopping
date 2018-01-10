@@ -1,0 +1,165 @@
+<?php
+
+/**
+ * Implements hook_schema().
+ */
+function we_content_migration_schema() {
+  $schema['we_content_migration_mapping'] = array(
+    'description' => 'The table to save the mapping.',
+    'fields' => array(
+      'id' => array(
+        'description' => "The primary identifier",
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'old_entity_type' => array(
+        'description' => "The machine name of the old entity",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ),
+      'old_bundle' => array(
+        'description' => "The old bundle's name",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => FALSE,
+      ),
+      'old_entity_id' => array(
+        'description' => "The old entity id",
+        'type' => 'int',
+        'not null' => FALSE,
+      ),
+      'new_entity_type' => array(
+        'description' => "The machine name of the new entity",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'new_bundle' => array(
+        'description' => "The new bundle's name",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'new_entity_id' => array(
+        'description' => "The new entity id",
+        'type' => 'int',
+        'not null' => TRUE,
+      )
+    ),
+    'indexes' => array(
+      'mapping' => array('old_entity_type', 'old_bundle', 'old_entity_id', 'new_entity_type', 'new_bundle', 'new_entity_id'),
+    ),
+    'primary key' => array('id'),
+  );
+
+  $schema['we_content_migration_mapping_reference'] = array(
+    'description' => 'The table to save all reference field data.',
+    'fields' => array(
+      'id' => array(
+        'description' => "The primary identifier",
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'entity_type' => array(
+        'description' => "The machine name of the entity",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'bundle' => array(
+        'description' => "The bundle's name",
+        'type' => 'varchar',
+        'length' => 128,
+        'not null' => TRUE,
+      ),
+      'eid' => array(
+        'description' => "The entity id",
+        'type' => 'int',
+        'not null' => TRUE,
+      ),
+      'field_name' => array(
+        'description' => "The field name",
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'field_value' => array(
+        'description' => "The field value string",
+        'type' => 'text',
+        'not null' => TRUE,
+      ),
+      'language' => array(
+        'type' => 'varchar',
+        'length' => 12,
+        'not null' => TRUE,
+        'default' => ''
+      ),
+      'status' => array(
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0
+      ),
+    ),
+    'indexes' => array(
+      'mapping_reference' => array('entity_type', 'bundle', 'eid', 'field_name', 'status'),
+    ),
+    'primary key' => array('id'),
+  );
+
+  return $schema;
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function we_content_migration_uninstall() {
+  drupal_uninstall_schema('we_content_migration_mapping');
+  drupal_uninstall_schema('we_content_migration_mapping_reference');
+}
+
+/**
+ * Implementation of hook_requirements().
+ */
+function we_content_migration_requirements($phase) {
+  $requirements = array();
+  // Ensure translations don't break at install time.
+  $t = get_t();
+
+  if ($phase == 'runtime' || $phase == 'install') {
+    $required_version = '1.8 or higher';
+    $requirements['we_content_migration'] = array(
+      'title' => $t('Content migration'),
+      'value' => 'PHPExcel ' . $required_version,
+    );
+
+    $library_path = libraries_get_path('PHPExcel');
+    if (!$library_path) {
+      $path = 'sites/all/libraries/PHPExcel';
+      $requirements['we_content_migration']['severity'] = REQUIREMENT_ERROR;
+      $requirements['we_content_migration']['description'] = $t('PHPExcel @version is required. Please <a href="@url">download the new version</a>, extract the archive and copy the contents to the following location:<br /><code>@path</code>. Make sure the main file, PHPExcel.php, is located at<br /><code>@class</code>.', array(
+        '@version' => $required_version,
+        '@url' => 'https://github.com/PHPOffice/PHPExcel',
+        '@path' => $path,
+        '@class' => $path . '/Classes/PHPExcel.php',
+      ));
+    }
+    else if (!file_exists(DRUPAL_ROOT . '/' . $library_path . '/Classes/PHPExcel.php')) {
+      $path = 'sites/all/libraries/PHPExcel';
+      $requirements['we_content_migration']['severity'] = REQUIREMENT_ERROR;
+      $requirements['we_content_migration']['description'] = $t('PHPExcel @version is required. Please <a href="@url">download the new version</a>, extract the archive and copy the contents to the following location:<br /><code>@path</code>. Make sure the main file, PHPExcel.php, is located at<br /><code>@class</code>.', array(
+        '@version' => $required_version,
+        '@url' => 'https://github.com/PHPOffice/PHPExcel',
+        '@path' => $path,
+        '@class' => $path . '/Classes/PHPExcel.php',
+      ));
+    }
+    else {
+      $requirements['we_content_migration']['severity'] = REQUIREMENT_OK;
+    }
+  }
+
+  return $requirements;
+}

@@ -1,0 +1,1364 @@
+// ====================
+// Styling for Language dropdown
+// ---
+.ddsDefault {
+	.dd-container {
+		width: auto !important;
+		@include sizeRem(min-width, 125);
+	}
+	.dd-select {
+		width: auto !important;
+		border: 0 none;
+		background: transparent !important;
+		@include border-radius(0);
+		label {
+			margin: 0;
+		}
+	}
+	.dd-option{
+		@include display-flex;
+		@include align-items(baseline);
+	}
+	.dd-selected {
+		@include sizeRem(padding, 7, 4, 10, 5, 10);
+		position: relative;
+		@include sizeRem(padding-left, 34);
+		color: $link-color;
+		&:before {
+			content: '';
+			@include sizeRem(width, 14);
+			@include sizeRem(height, 14);
+			@include sizeRem(left, 10);
+			@include sizeRem(margin-top, -7);
+			position: absolute;
+			top: 50%;
+			background: url('../images/ico-globe.svg') no-repeat transparent;
+			background-size: contain;
+		}
+		img {
+			display: none;
+		}
+		&:hover,
+		&:focus {
+			color: darken($link-color, 8%);
+		}
+	}
+	li {
+		display: block !important;
+		label {
+			line-height: 1.4 !important;
+			margin: 0;
+		}
+	}
+	.dd-pointer-down {
+		border-top-color: $link-color;
+	}
+	.dd-options {
+		background: $bg-color;
+		border: 1px solid $bg-color;
+		@include box-shadow(0 1px 5px rgba($black-color, 0.6));
+	}
+	.dd-option {
+		cursor: pointer;
+	}
+	.dd-option-selected {
+		label {
+			color: $link-color;
+		}
+	}
+	.dd-pointer-up {
+		border-bottom-color: $link-color !important;
+	}
+}
+
+/* ul.primary menu */
+ul.primary {
+    @include clearfix;
+    border: none;
+    @include sizeRem(font-size, 13);
+    @include wp-font(font-bold);
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    @include sizeRem(margin-bottom, -1);
+    position: relative;
+    z-index: 2;
+    @include display-flex;
+    @include sizeRem(margin-right, -3);
+    @include sizeRem(margin-right, -3);
+    li {
+        @include display-flex(inline-flex);
+        @include sizeRem(padding-right, 3);
+        @include sizeRem(padding-right, 3);
+        a {
+            background-color: transparent;
+            border: 1px solid $border-color;
+            @include border-top-left-radius(3px);
+            @include border-top-right-radius(3px);
+            color: $body-color;
+            background-color: $bg-color;
+            @include sizeRem(font-size, 15);
+            @include wp-font(font-bold);
+            display: block;
+            margin: 0;
+            @include sizeRem(padding, 15, 2, 20);
+            @include sizeRem(min-width, 200);
+            text-transform: capitalize;
+            &:hover, &:focus {
+                color: $link-color;
+                background-color: $white-color;
+                border-color: $border-color;
+            }
+        }
+        &.active {
+            a {
+                background-color: $white-color;
+                border-color: $border-color;
+                border-bottom-color: transparent;
+                color: $link-color;
+            }
+        }
+    }
+
+    ~ h2.element-invisible ~ ul.secondary {
+        float: right;
+        position: relative;
+        z-index: 2;
+        margin: {
+            bottom: 0;
+            top: -38px;
+        }
+        text-align: right;
+    }
+}
+
+// Breadcrumb
+.breadcrumb{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: transparent;
+    @include border-radius(0);
+    @include wp-font(font-medium);
+	@include sizeRem(font-size, 14);
+	padding:{
+		@include sizeRem(top, 20);
+		@include sizeRem(bottom, 20);
+	}
+    a{
+		color: $body-color;
+		&:hover, &:focus{
+			color: $link-color;
+		}
+    }
+}
+
+
+#dashboard .region:not(.ui-sortable){
+	margin: 0;
+	border: 0 none;
+	padding: 0;
+	@include border-radius(0);
+}
+
+#dashboard div#dashboard_main{
+	width: (66.666666% - calculateView(15));
+	margin-right: calculateView(15);
+}
+#dashboard div#dashboard_sidebar{
+	width: (33.333333% - calculateView(15));
+	margin-left: calculateView(15);	
+}
+#dashboard{
+	.container-inline{
+		@include display-flex;
+		@include flex-wrap(wrap);
+	}
+}
+#dashboard_sidebar{
+	*:not(.draggable) .form-type-textfield, *:not(.draggable) .form-type-select{
+		@include flex-width-col-xs(100%);
+	}
+}
+div.admin{
+	padding: 0;
+	.left{
+		@include sizeRem(margin-left, 0);
+		width: 50%;
+		@include sizeRem(padding-right, 15);
+		border-right: 1px solid $border-color;
+	}
+	.right{
+		@include sizeRem(margin-right, 0);
+		width: 50%;
+		@include sizeRem(padding-left, 15);
+	}
+}
+
+div.admin-panel{
+	border-bottom: 1px solid $border-color;
+	@include sizeRem(padding-top, 25);
+	padding-left: 0;
+	padding-right: 0;
+	&:first-child{
+		padding-top: 0;
+	}
+	&:last-child{
+		padding-bottom: 0;
+		border-bottom: 0 none;
+	}
+	h3{
+	    background-color: $light-blue-color;
+	    @include sizeRem(padding, 8, 2, 10);
+	    @include sizeRem(font-size, 14);
+	    @include wp-font(font-bold);
+	    line-height: 1;
+	    margin-top: 0;
+	}
+	.body{
+		padding: 0;
+	}
+}
+
+// Drag Dashboard
+#dashboard {
+	.canvas-content {
+	    padding: 0;
+	    @include sizeRem(padding-bottom, 15);
+	    position: relative;
+	    > p{
+	    	@include sizeRem(padding-right, 165);
+	    	@include sizeRem(font-size, 14);
+	    	@include wp-font(font-medium);
+	    }
+	    a.button{
+	    	@include btn2;
+	    	position: absolute;
+	    	top: 0;
+	    	right: 0;
+	    	@include sizeRem(min-width, 150);
+	    }
+	}
+
+	#disabled-blocks {
+		padding: 0;
+		@include sizeRem(padding-top, 15);
+		.region{
+		    background-color: #ededed;
+		    border-color: #e1e1e1;
+		    @include border-radius(3px);
+		    @include sizeRem(padding, 15, 1);
+		    padding-bottom: 0;
+		}
+		.block , .block-placeholder{
+			background: $white-color;
+		    color: $body-color;
+		    @include sizeRem(margin, 0, 4, 15, 15, 0);
+		    @include sizeRem(min-width, 240);
+		    @include sizeRem(padding, 14, 4, 10, 14, 15);
+		    border: 1px solid $border-color;
+		    @include border-radius(3px);
+		    @include sizeRem(min-height, 49);
+		    height: auto !important;
+
+			.block{
+				padding: 0;
+				margin: 0;
+				min-height: initial;
+				min-width: initial;
+				border: 0 none;
+				&:after{
+					display: none;
+				}
+			}
+			h2{
+				border-bottom: none;
+			    margin: 0;
+			    padding: 0;
+			    @include wp-font(font-medium);
+			    @include sizeRem(font-size, 14);
+			    &:before{
+			    	@include sizeRem(margin-top, 2);
+			    }
+			}
+
+			&:after{
+			    content: '\e09a';
+			    float: right;
+			    @include simpleline;
+			    @include sizeRem(font-size, 16);
+			}
+		}
+		// .dashboard-add-other-blocks{
+		// 	~ *{
+		// 		@include sizeRem(margin-top, 15);
+		// 	}
+		// }
+	}
+
+	&.customize-inactive #disabled-blocks .block:hover{
+		background: $link-color;
+		h2{
+			background: none;
+			color: $white-color;
+		}
+		&:after{
+			color: $white-color;
+		}
+		.block{
+			background-color: $link-color;
+		}
+	}
+
+	.dashboard-add-other-blocks{
+		margin-top: 0;
+		> a{
+			background: transparent;
+		    color: $body-color;
+		    @include sizeRem(min-width, 240);
+		    @include sizeRem(padding, 14, 4, 10, 14, 15);
+		    border: 1px dotted rgba($black-color, .2);
+	    	@include border-radius(3px);
+	    	@include display-flex(inline-flex);
+	    	@include wp-font(font-medium);
+	    	@include sizeRem(margin-bottom, 15);
+	    	&:before{
+    		    content: '\f067';
+    		    @include fontawesome;
+			    @include sizeRem(font-size, 16);
+			    @include sizeRem(padding-right, 6);
+	    	}
+		}
+	}
+	.ui-sortable .block h2 {
+	    background: none;
+	    @include sizeRem(font-size, 16);
+	    @include sizeRem(margin, 0, 4, 0, 25, 0);
+	    @include sizeRem(padding, 10, 4, 15, 24, 0);
+	    text-transform: none;
+	    @include wp-font(font-bold);
+	    color: $body-color;
+
+	    &:before{
+	    	content: '\e023';
+	    	@include simpleline;
+	    	@include sizeRem(padding-right, 6);
+	    	@include sizeRem(font-size, 12);
+	    	position: relative;
+	    	// @include sizeRem(top, 1);
+
+	    }
+	}
+	&.customize-inactive .dashboard-region .ui-sortable .block:hover{
+	    background: $white-color;
+    	color: $body-color;
+    	h2{
+    		background: none;
+    		color: $title-color;
+    	}
+	}
+}
+
+
+.dashboard-region {
+	> .region {
+		> .block,
+		> .dashboard-placeholder {
+		    background-color: $white-color;
+		    border: 1px solid $border-color;
+		    @include border-radius(3px);
+		    @include sizeRem(margin-bottom, 15);
+		    @include sizeRem(padding, 15, 1);
+		}
+	}
+	.item-list ul li span {
+	    color: $body-color;
+	    display: block;
+	    @include sizeRem(font-size, 13);
+	}
+}
+
+// Table
+table{
+    border: 1px solid $border-color;
+    background: $white-color;
+    @include sizeRem(margin-bottom, 20);
+    width: 100%;
+    @include border-radius(3px);
+    &.sticky-header{
+    	z-index: 10;
+    }
+
+    th, td{
+    	@include sizeRem(padding, 10, 2, 15);
+    	&:last-child{
+    		border-right: 1px solid $border-color;
+    	}
+    }
+
+    a{
+    	color: $title-color;
+    	&:hover, &:focus{
+    		color: $link-color;
+    	}
+    }
+	// select[id*="edit-"], .webform-weight{
+	// 	@include sizeRem(height, 30);
+	// }
+    th {
+	    border-bottom: none;
+	    font-weight: 600;
+	    vertical-align: top;
+	    &.active {
+	    	img{
+	    		position: relative;
+	    		display: inline-block;
+	    		@include sizeRem(margin-left, 3);
+	    		@include sizeRem(margin-top, -6);
+	    	}
+	    }
+	}
+    thead th {
+	    padding-bottom: 20px;
+	    padding-top: 20px;
+	    text-transform: uppercase;
+
+	}
+	tbody{
+		border-top: 1px solid $border-color;
+	}
+	tr.even, tr.odd{
+		background-color: $white-color;
+		border-bottom-color: $border-color;
+		&:hover, &:focus{
+			background-color: darken($bg-color, 2%);
+		} 
+	}
+	td.active{
+		background-color: darken($bg-color, 2%);
+	}
+	tr.odd{
+		background-color: $bg-color;
+	}
+	
+	td {
+	    color: $title-color;
+	    @include sizeRem(font-size, 14);
+	    vertical-align:middle;
+	}
+	@mixin reset-text{
+	    display: inline;
+	    height: auto;
+	    width: auto;
+	    overflow: inherit;
+	    position: relative;
+	    text-indent: 0;
+	    color: $title-color;
+	    &:after{
+	    	display: none !important;
+	    }
+	    &:hover, &:focus{
+	    	color: $link-color;
+	    }
+	}
+	td:first-child{
+		a{
+		    @include reset-text;
+		}
+	}
+
+	th{
+		a[href*="disable"]{
+			@include reset-text;
+		}
+	}
+
+	input[value="Edit"]{
+		content:"\e060";
+		@include fontawesome;
+	}
+
+	a[href*="edit?"], a[href*="delete"],
+	a[href*="components"], a[href*="clear"],
+	a[href*="configure"],
+	a[title*="Edit instance settings."],
+	a[href*="disable"], a[href*="enable"], a[href*="clone"],
+	a[href*="export"],
+	a[href*="types/manage"],
+	a[href*="menu/manage"],
+	a[href*="structure/taxonomy"],
+	a[href*="structure/tb-megamenu"]{
+		@include display-flex(inline-flex);
+		@include sizeRem(height, 24);
+		@include sizeRem(width, 24);
+	    overflow: hidden;
+	    position: relative;
+	    text-indent: -9999em;
+	    color: $body-color;
+	    &:after{
+	    	@include simpleline;
+		    @include sizeRem(font-size, 16);
+		    left: 0;
+		    height: 100%;
+		    line-height: 1.6;
+		    position: absolute;
+		    text-align: center;
+		    text-indent: 0;
+		    top: 0;
+		    width: 100%;
+	    }
+
+	    &:hover, &:focus{
+	    	color: $link-color;
+	    }
+	}
+	a[href*="export"]{
+		&:after{
+			content:"\e083";
+		}
+	}
+
+	a[href*="components"]{
+		&:after{
+			content:"\e087";
+		}
+	}
+	a[href*="edit?"],
+	a[href*="configure"],
+	// &:not(.field-ui-overview) a[href*="manage"],
+	a[title*="Edit instance settings."]{
+		&:after{
+			content:"\e060";
+		}
+	}
+	
+	a[href*="clear"]{
+		&:after{
+			content:"\e098";
+		}
+	}
+	a[href*="components/"]{
+		&:after{
+			content:"\e060";
+		}
+	}
+
+	a[href*="clone"]{
+		&:after{
+			content:"\f24d";
+			@include fontawesome;
+			@include sizeRem(font-size, 16);
+		    line-height: 1.6;
+		}
+	}
+	
+	// &:not(.field-ui-overview) a[href*="/fields"]{
+	// 	&:after{
+	// 		content:"\e09a";
+	// 	}
+	// }
+
+	// &:not(.field-ui-overview) a[href*="/display"]{
+	// 	&:after{
+	// 		content:"\e087";
+	// 	}
+	// }
+	
+	// &:not(.field-ui-overview) a[href*="/delete"]{
+	// 	&:after{
+	// 		content:"\e054";
+	// 	}
+	// }
+	
+	// Content types
+	a[href*="types/manage"]{
+		&:after{
+			content:"\e060";
+		}	
+	}
+
+	a[href*="types/manage"][href$="fields"]{
+		&:after{
+			content:"\e09a";
+		}	
+	}
+
+	a[href*="types/manage"][href$="display"]{
+		&:after{
+			content:"\e087";
+		}	
+	}
+
+	a[href*="types/manage"][href$="delete"]{
+		&:after{
+			content:"\e054";
+		}	
+	}
+
+	a[href*="types/manage"][href$="field-settings"],
+	a[href*="types/manage"][href$="widget-type"]{
+		@include reset-text;	
+	}
+
+	// Menu
+	a[href*="menu/manage"]{
+		&:after{
+			content:"\e067";
+		}	
+	}
+
+	a[href*="menu/manage"][href$="edit"],
+	a[href*="tb-megamenu"]{
+		&:after{
+			content:"\e060";
+		}	
+	}
+
+
+	a[href*="menu/manage"][href$="add"]{
+		&:after{
+			content:"\f067";
+			@include fontawesome;
+			@include sizeRem(font-size, 16);
+		    line-height: 1.6;
+		}	
+	}	
+
+	// Taxonamy
+	
+	a[href*="structure/taxonomy"]{
+		&:after{
+			content:"\e067";
+		}	
+	}
+
+	a[href*="structure/taxonomy"][href$="edit"]{
+		&:after{
+			content:"\e060";
+		}	
+	}
+
+	a[href*="structure/taxonomy"][href$="add"]{
+		&:after{
+			content:"\f067";
+			@include fontawesome;
+			@include sizeRem(font-size, 16);
+		    line-height: 1.6;
+		}	
+	}
+	a[href*="structure/taxonomy"][href*="replace"]{
+		@include reset-text;	
+	}
+
+
+	a[href*="delete"]{
+		&:after{
+			content:"\e054";
+		}
+	}
+	
+	a[href*="disable"]{
+		&:after{
+			content:"\f06e";
+			@include fontawesome;
+			@include sizeRem(font-size, 16);
+		    line-height: 1.6;
+		}
+	}
+
+	a[href*="enable"]{
+		&:after{
+			content:"\f070";
+			@include fontawesome;
+			@include sizeRem(font-size, 16);
+		    line-height: 1.6;
+		}
+	}
+
+	
+
+	
+	.views-field-edit-node{
+		@include display-flex;
+		@include align-items(center);
+	}
+
+	.radio input[type="radio"],
+	.radio-inline input[type="radio"],
+	.checkbox input[type="checkbox"],
+	.checkbox-inline input[type="checkbox"]{
+		position: relative;
+	    margin-left: 0;
+	    top: 0;
+	    margin-top: 0;
+	    @include sizeRem(margin-right, 5);
+	}
+
+	.region-title td, .module {
+	    background-color: $light-blue-color;
+	    color: $title-color;
+	}
+	
+	&[id*="context-"]{
+		tr.even, tr.odd{
+			background-color: $white-color;
+		}
+	}
+	// &#field-display-overview{
+	// 	.form-type-textfield, .form-type-select{
+	// 		@include sizeRem(max-width, 360);
+	// 		white-space: inherit;
+	// 	}
+	// }
+	.form-type-textfield, .form-type-select{
+		// @include display-flex(inline-flex);
+		display: block;
+		// max-width: inherit;
+		margin-right: 0;
+	    // @include flex-direction(column);
+	    // @include flex-width-col-xs(360px);
+	    // @include sizeRem(margin-right, 15);   
+    }
+
+    .form-actions, .buttons{
+    	.form-submit{
+    		@include sizeRem(min-width, 120);
+    	}
+    }
+
+    .ctools-content{
+    	a{
+    		@include reset-text;
+    	}
+    }
+
+	&[id*="field-product"]{
+		td{
+			@include sizeRem(font-size, 12);
+			word-break: break-word;
+		}
+	}
+	.ief-entity-operations{
+		.form-submit{
+			display: inline-block;
+	        padding: 0;
+	        margin: 0;
+	        color: $black-color;
+	        background-color: transparent;
+	        border :0 none;
+	        min-width: inherit;
+	        @include sizeRem(font-size, 12);
+	        color: $link-color;
+	        @include wp-font(font-medium);
+	        @include sizeRem(margin-left, 2);
+	        @include sizeRem(margin-right, 2);
+	        &:hover, &:focus{
+	        	color: $link-color;
+	        	text-decoration: underline;
+	        }
+	    }
+	}
+}
+
+// pager
+.pager li > a, .pager li > span{
+	color: $title-color;
+    @include sizeRem(padding, 8, 2, 16);
+    text-decoration: none;
+    @include transition(.3s ease-in-out);
+    background-color: transparent;
+    border-color: transparent;
+    @include border-radius(3px);
+    &:hover, &:focus{
+		background-color: $border-color;
+		border-color: $border-color;
+    }
+}
+.item-list .pager{
+	text-align: right;
+	li{
+		padding: 0;
+		margin: 0;
+	}
+	.pager-current{
+		@include border-radius(3px);
+		@include sizeRem(padding, 9, 4, 18, 9, 18);
+		background-color: $link-color;
+		@include wp-font(font-medium);
+		color: $white-color;
+	}
+}
+
+// Tab Secondary
+ul.secondary {
+	@include display-flex;
+	@include align-items(center);
+	li{
+		border-right: 0;
+		@include sizeRem(padding-left, 3);
+		@include sizeRem(padding-right, 3);
+		a{
+			@include btn2;
+			@include display-flex;
+			&.active{
+				border-bottom: 0 none;
+				background-color: darken(#6dd29a, 20%);
+        		color: $white-color;	
+			}
+		}
+
+	}
+}
+
+// Filter
+.ckeditor_links{
+	@include sizeRem(margin-top, 15);
+	@include sizeRem(margin-bottom, 15);
+	@include display-flex(inline-flex);
+}
+
+.filter-wrapper{
+	border-top: 1px solid $border-color;
+	@include sizeRem(padding, 15, 1);
+    @include sizeRem(margin-bottom, 15);
+}
+
+.field-widget-image-image {
+    @include sizeRem(margin-bottom, 15);	
+}
+
+div.image-widget-data{
+	float: none;
+	overflow: hidden;
+}
+
+.form-managed-file .form-submit{
+	float: right;
+}
+
+.image-widget, .link-field-subrow{
+	border: 1px solid $border-color;
+	@include sizeRem(padding, 15, 1);
+	@include border-radius(3px);
+	*:not(.draggable) .form-type-textfield, *:not(.draggable) .form-type-select{
+		display: block;
+	}
+}
+
+
+.tips{
+	@include sizeRem(padding-left, 10);
+}
+
+div.vertical-tabs{
+	border-color: $border-color;
+	ul.vertical-tabs-list{
+		border-color: $border-color;
+		li{
+			border-color: $border-color;
+			background-color: $bg-color;
+			a{
+				color: $title-color;
+				&:hover{
+					color: $link-color;
+					outline: none;
+				}
+			}
+		}
+		.summary{
+			color: $body-color;
+			@include sizeRem(font-size, 13);
+		}
+		.selected {
+			strong{
+				color: $link-color;
+			}
+			.summary{
+				color: $title-color;
+			}
+		}
+	}
+}
+
+.vertical-tabs fieldset.vertical-tabs-pane{
+	padding: 0;
+}
+
+.draggable a.tabledrag-handle{
+	@include sizeRem(height, 15);
+}
+a.tabledrag-handle .handle {
+    background-position: 0 3px;
+    @include sizeRem(height, 15);
+    @include sizeRem(width, 15);
+    @include sizeRem(margin, 0, 2, 8);
+    padding: 0;
+}
+
+.webform-conditional, .webform-conditional-new, .webform-inline-radio{
+	max-width: initial;
+	.form-text, .form-select{
+		width: auto;
+	}
+}
+tr.odd .form-item:not(.form-type-checkbox),
+tr.even .form-item:not(.form-type-checkbox){
+    @include sizeRem(margin-top, 10);
+    @include sizeRem(margin-bottom, 10);
+}
+
+tr.odd.draggable, tr.even.draggable{
+ 	.form-item {
+	    margin-bottom: 0;
+	    margin-top: 0;
+	}
+	.field-formatter-settings-edit-form{
+		.form-item {
+		    margin: 10px 0;
+		}
+	}
+}
+
+.webform-container-inline div + div,
+.webform-container-inline div.form-item + div {
+    @include sizeRem(margin-left, 10);
+}
+
+.webform-conditional-action {
+    @include sizeRem(margin-top, 10);
+    @include sizeRem(margin-bottom, 10);
+}
+
+.collapsed legend {
+    border: 1px solid $border-color;
+    border-top: none;
+    @include border-radius(3px);
+}
+
+html.js fieldset.collapsed{
+	@include sizeRem(padding-top, 36);
+}
+
+html.js #features-export-form fieldset.collapsed {
+    @include sizeRem(margin-bottom, 15);
+    @include sizeRem(min-height, 50);
+    margin-top: 0;
+}
+
+fieldset.features-export-component{
+	margin-top: 0;
+	@include sizeRem(margin-bottom, 15);
+}
+
+.field-prefix:not(span){
+	@include display-flex;
+	@include align-items(center);
+	> span{
+		@include sizeRem(margin-right, 3);
+	}
+}
+
+#field-display-overview .field-formatter-settings-edit{
+    padding: 0;
+    background: none;
+    border: 0 none;
+}
+
+.context-plugin-list{
+	padding-left: 0;
+}
+.context-plugins .context-plugin-info{
+	.form-type-textfield, .form-type-select{
+		display: block;
+	}
+}
+.context-plugins .context-plugin-list li span.remove{
+	background-color: $seafoam-blue-color;
+	color: $white-color;
+	&:hover, &:focus{
+		background-color: darken($seafoam-blue-color, 10%);
+		color: $white-color;
+	}
+}
+
+
+a.features-storage{
+	background-color: $seafoam-blue-color;
+	color: $white-color;
+	&:hover, &:focus{
+		background-color: darken($seafoam-blue-color, 10%);
+		color: $white-color;
+	}
+}
+
+div.fivestar-widgets div.form-item{
+	@include flex(1);
+	max-width: inherit;
+}
+
+td.menu-enabled{
+	width: auto;
+}
+
+.ctools-dropbutton-processed {
+	@include sizeRem(min-width, 80);
+	.ctools-content a{
+		margin: 0 auto;
+	}
+}
+
+#views-ui-add-form fieldset{
+	@include sizeRem(padding-top, 15);
+}
+
+.views-admin .icon.add{
+	background: none;
+	position: relative;
+	&:before{
+		content:"\f067";
+		@include fontawesome;
+		position: relative;
+		display: inline-block;
+		margin-right: 3px;
+	}
+}
+
+.views-displays .secondary{
+	@include flex-wrap(wrap);
+	a{
+		background-color: transparent;
+		color: $title-color;
+		border-color: transparent;
+	}
+	a:hover, .active a{
+		color: $title-color;
+		background-color: $light-blue-color;
+		border-color: $light-blue-color;
+	}
+}
+
+#edit-display-settings-title{
+	@include sizeRem(font-size, 18);
+}
+
+.views-ui-dialog #views-ajax-title{
+	@include sizeRem(font-size, 18);
+
+}
+
+.views-display-settings .ctools-toggle {
+	@include sizeRem(margin-top, 12);
+	@include sizeRem(margin-right, 5);
+}
+
+.views-ui-display-tab-bucket h3{
+	@include sizeRem(font-size, 16);
+	@include wp-font(font-medium);
+	color: $title-color;
+	border-left: 3px solid $light-blue-color;
+	@include sizeRem(margin-left, 10);
+	@include sizeRem(padding-left, 5);
+	@include sizeRem(margin-bottom, 10);
+	@include sizeRem(margin-top, 5);
+	padding-top: 0;
+    line-height: 1;
+    padding-bottom: 0;
+    text-transform: uppercase;
+}
+
+.views-ui-display-tab-bucket .ctools-button-processed{
+	@include sizeRem(top, 8);
+}
+
+.ctools-button-processed:hover{
+	border-color: $link-color;
+	color: $link-color;
+}
+
+// Ui widget
+
+.ui-widget{
+	.form-type-textfield, .form-type-select{
+		display: block;
+		max-width: inherit;
+		@include flex(inherit);
+	}	
+	.form-select, .form-text{
+		width: auto;
+	}
+
+	.container-inline {
+		div, label{
+			display: inline;
+		}
+	}
+}
+
+.views-ui-dialog .form-buttons{
+	// @include sizeRem(padding-top, 14);
+	// @include sizeRem(padding-bottom, 14);
+	position: relative;
+	@include sizeRem(top, 11);
+}
+
+#views-filterable-options-controls .form-item{
+	display: inline;
+}
+
+.ctools-button-processed .ctools-content ul{
+	margin: 0;
+	padding-left: 0;
+}
+
+.views-filterable-options .form-type-checkbox{
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+#views-ui-preview-form {
+	.arguments-preview, .form-type-textfield, .form-type-select{
+		max-width: inherit;
+		@include flex(inherit);
+		display: block;
+	}
+	.form-type-textfield label{
+		@include sizeRem(font-size, 16);
+	}
+
+	.form-select, .form-text{
+		width: auto;
+	}
+}
+
+input#edit-commerce-line-items-und-actions-cancel,
+input#edit-commerce-line-items-und-actions-line-item-add,
+input#edit-property-add,
+input#edit-reset, 
+// input#edit-field-specifications-und-0-remove-button, 
+input#edit-add-add, 
+input#edit-clear, 
+form input.rules-switch-button, 
+input#edit-info-preview, 
+input#edit-generate, 
+input#edit-preview, 
+#edit-additional-settings-fieldgroup-submit, 
+#edit-fields-field-image-settings-edit-form-actions-cancel-settings, 
+input#edit-delete, 
+#edit-cancel, 
+input#edit-clear-cache, 
+#edit-settings-vars-more, 
+#edit-add, 
+input#edit-actions-cancel{
+	background-color: $body-color;
+	border-color: $body-color;
+	color: $white-color;
+	&:hover{
+		background-color: darken($body-color, 10%);
+		border-color: darken($body-color, 10%);
+		color: $white-color;
+	}
+}
+a#edit-cancel{
+    color: #fff;
+    display: inline-block;
+    @include sizeRem(padding, 9, 2, 20);
+    @include border-radius(20px);
+    text-align: center;
+}
+
+#views-ui-clone-form{
+    .form-submit{
+    	position: relative;
+    	top: 34px;	
+    }
+}
+
+html.js #module-filter-submit .form-actions .form-submit{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+html.js .module-filter-inputs-wrapper .form-item{
+	display: block;
+	max-width: inherit;
+}
+
+// Style Radio
+html.js .toggle-enable{
+	height: 25px;
+	line-height: 25px;
+	background: none !important;
+	border: 0 none;
+	@include border-radius(0);
+	@include box-shadow(inherit);
+	div{
+		position: absolute;
+	    cursor: pointer;
+	    top: 0;
+	    left: 0 !important;
+	    right: 0;
+	    bottom: 0;
+	    width: auto;
+	    background: #54e1c5;
+	    @include border-radius(15px);
+	    @include transition(.4s);
+	    @include box-shadow(0 0 4px rgba($black-color, .3) inset);
+		&:before{
+			position: absolute;
+		    content: "";
+		    height: 17px;
+		    width: 17px;
+		    left: 4px;
+		    bottom: 4px;
+		    top: auto;
+		    background-color: $white-color;
+		    @include transition(.4s);
+		    @include border-radius(50%);
+		    @include box-shadow(0 0 4px rgba($black-color, .3));
+		    @include translateX(25px);
+		}
+		&:after{
+			display: none;
+		}
+	}
+	&.enabled{
+		div{
+		    background-color: #54e1c5;
+		    &:before{
+		    	@include translateX(25px);
+		    }
+		}
+	}
+	&.off{
+		div{
+		    background-color: #666666;
+		    &:before{
+		    	@include translateX(0);
+		    }
+		}
+	}
+}
+
+input[type=checkbox], input[type=radio]{
+	top: 3px;
+	left: 0;
+	margin: 0;
+	@include sizeRem(width, 18);
+	@include sizeRem(height, 18);
+	@include sizeRem(margin-right, 2);
+   	@include appearance(none);
+   	border: 1px solid $border-color;
+   	background-color: $white-color;
+   	display: inline-block;
+   	position: relative;
+   	@include transition(background .3s ease-in-out);
+   	outline: none;
+   	vertical-align: baseline;
+	&:checked{
+		border-color: $seafoam-blue-color;
+		background-color: $white-color;
+		@include box-shadow(inset 0px 0px 0px 4px $seafoam-blue-color);
+	}
+}
+input[type=checkbox]{
+	@include border-radius(3px);
+}
+
+input[type=radio]{
+	@include border-radius(50%);
+}
+
+// .form-type-radio,
+// .form-type-checkbox{
+// 	position: relative;
+// }
+// input[type=checkbox], input[type=radio]{
+// 	position: absolute;
+// 	@include opacity(0);
+// 	top: 0;
+// 	left: 0;
+// 	@include sizeRem(width, 18);
+// 	@include sizeRem(height, 18);
+// 	&:checked + label.option{
+// 		&:before{
+// 			background-color: $seafoam-blue-color;
+// 			border-color: $seafoam-blue-color;
+// 		}
+// 		&:after{
+// 			@include opacity(1);
+// 			@include scale(1);
+// 		}
+// 	}
+// 	& + label.option{
+// 		padding-left: 23px;
+// 		position: relative;
+// 		&:before{
+// 			content:'';
+// 			@include sizeRem(width, 18);
+// 			@include sizeRem(height, 18);
+// 			border: 1px solid $border-color;
+// 			background-color: $white-color;
+// 			position: absolute;
+// 			left: 0;
+// 			top: 0;
+// 			@include transition(all .3s ease-in-out);
+// 		}
+// 		&:after{
+// 			content:'';
+// 			position: absolute;
+			
+// 			@include opacity(0);
+// 			@include scale(0);
+// 			@include transition(all .3s ease-in-out);
+// 		}
+// 	}
+// }
+
+// input[type=radio]{	
+// 	& + label.option{
+// 		&:before{
+// 			@include border-radius(50%);
+// 		}
+// 		&:after{
+// 			@include sizeRem(left, 5);
+// 			@include sizeRem(top, 5);
+// 			@include border-radius(50%);
+// 			@include box-shadow(0 0 4px rgba($black-color, .3));
+// 			@include sizeRem(width, 8);
+// 			@include sizeRem(height, 8);
+// 			background-color: $white-color;
+// 		}
+// 	}
+// }
+
+
+// input[type=checkbox]{
+// 	& + label.option{
+// 		&:before{
+// 			@include border-radius(3px);
+// 		}
+// 		&:after{
+// 			content: "\f00c";
+// 			@include fontawesome;
+// 			@include sizeRem(font-size, 14);
+// 			@include sizeRem(left, 2);
+// 			@include sizeRem(top, 2);
+// 			@include text-shadow(0 0 4px rgba($black-color, .3));
+// 			color: $white-color;
+// 		}
+// 	}
+// }
+
+fieldset.ief-entity-fieldset{
+	@include sizeRem(margin-bottom, 15);
+}
+
+form .field-multiple-table th.field-label{
+	padding-left: 15px;
+}
+
+form .field-add-more-submit{
+	@include sizeRem(margin-top, 15);
+}
+
+

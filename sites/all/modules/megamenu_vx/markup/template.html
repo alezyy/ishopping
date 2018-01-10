@@ -1,0 +1,185 @@
+<html>
+<head>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap-theme.css">
+<script src="jquery-1.11.1.js"></script>    
+<script src="bootstrap/js/bootstrap.min.js"></script> 
+<script src="bootstrap-hover-dropdown.js"></script> 
+</head>
+<style>
+    .navbar-toggle .icon-bar {
+       background-color: black;
+    }
+</style>
+<body>
+
+<div class="navbar">
+  <div class="wp-sm-menu container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#wp-sm-main-menu-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="wp-sm-main-menu-1">
+      <ul class="wp-sm-nav nav navbar-nav level-0">
+        <li class="wp-sm-item level-1">
+          <a href="#">Home</span></a>
+        </li>
+        <li class="wp-sm-item level-1">
+          <a href="#">About</span></a>
+        </li>
+        <li class="wp-sm-item level-1 dropdown active">
+          <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">Pages<span class="caret"></span></a>
+          <div class="wp-sm-submenu dropdown-menu">
+            <div class="wp-sm-row row-fluid">
+              <div class="wp-sm-col col-md-12">
+                <ul class="wp-sm-subnav level-1">
+                  <li class="wp-sm-item level-2">
+                    <a class="" href="#">Page 1</a>
+                  </li>
+                  <li class="wp-sm-item level-2">
+                    <a class="" href="#">Page 2</a>
+                  </li>
+                  <li class="wp-sm-item level-2 active">
+                    <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" data-target="#wp-sm-submenu-5" href="#">Page 3</a>
+                    <div class="wp-sm-submenu dropdown-menu">
+                      <div class="wp-sm-row row-fluid">
+                        <div class="wp-sm-col col-md-12">
+                          <ul class="wp-sm-subnav level-2">
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 1</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 2</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 3</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 4</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>                    
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="wp-sm-item level-1 dropdown">
+          <a class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown" href="#">Explore<span class="caret"></span></a>
+          <div class="wp-sm-submenu dropdown-menu" style="width: 500px;">
+            <div class="wp-sm-row row-fluid">
+              <div class="wp-sm-col col-md-4">
+                <div class="wp-sm-block">
+                  <div class="block">
+                    <div class="block-content">
+                      Block Content
+                    </div>
+                  </div>
+                </div>
+                <div class="wp-sm-block">
+                  <div class="block">
+                    <div class="block-content">
+                      Block Content
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="wp-sm-col col-md-2">
+                <ul class="wp-sm-subnav level-1">
+                  <li class="wp-sm-item level-2 wp-sm-show-children">
+                    <a class="" href="#">Page 4</a>
+                    <div class="wp-sm-submenu">
+                      <div class="wp-sm-row row-fluid">
+                        <div class="wp-sm-col col-md-12">
+                          <ul class="wp-sm-subnav level-2">
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 4 1</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 4 2</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 4 3</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 4 4</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="wp-sm-col col-md-2">
+                <ul class="wp-sm-subnav level-1">
+                  <li class="wp-sm-item level-2 dropdown wp-sm-show-children">
+                    <a class="" href="#">Page 5</a>
+                    <div class="wp-sm-submenu">
+                      <div class="wp-sm-row row-fluid">
+                        <div class="wp-sm-col col-md-12">
+                          <ul class="wp-sm-subnav level-2">
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 1</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 2</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 3</a>
+                            </li>
+                            <li class="wp-sm-item level-3">
+                              <a class="" href="#">Page 5 4</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="wp-sm-col col-md-4">
+                <div class="wp-sm-block">
+                  <div class="block">
+                    <div class="block-content">
+                      Block Content
+                    </div>
+                  </div>
+                </div>
+                <div class="wp-sm-block">
+                  <div class="block">
+                    <div class="block-content">
+                      Block Content
+                    </div>
+                  </div>
+                </div>
+              </div>            
+            </div>
+            <div class="wp-sm-row row-fluid">
+              <div class="wp-sm-col col-md-12">
+                <div class="wp-sm-block">
+                  <div class="block">
+                    <div class="block-content">
+                      Block Content
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

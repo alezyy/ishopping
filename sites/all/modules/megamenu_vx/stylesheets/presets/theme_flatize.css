@@ -1,0 +1,107 @@
+@import url(../../fonts/robotoslab/stylesheet.css);
+/* line 3, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize {
+  color: #fff;
+}
+/* line 7, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .nav > li > a {
+  color: #333 !important;
+  font-family: 'roboto_slabregular';
+  font-size: 12px;
+  font-weight: 100;
+  padding: 20px;
+  position: relative;
+  text-transform: uppercase;
+}
+/* line 17, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .nav > li:hover > a, .style-theme_flatize .nav > li:focus > a, .style-theme_flatize .nav > li.open > a, .style-theme_flatize .nav > li.active > a {
+  background: none !important;
+  box-shadow: none;
+  color: #1abc9c !important;
+}
+/* line 25, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu {
+  background-color: #181818;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  margin: 0;
+}
+/* line 30, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu:after {
+  height: 0;
+  border-bottom: 6px solid #181818;
+  border-left: 5px solid rgba(0, 0, 0, 0);
+  border-right: 5px solid rgba(0, 0, 0, 0);
+  content: "";
+  left: 35px;
+  position: absolute;
+  top: -6px;
+  width: 0;
+}
+/* line 41, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu .megamenu-vx-row {
+  border-color: #282828;
+}
+/* line 43, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+  padding: 15px 20px;
+}
+/* line 47, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu .megamenu-vx-row .megamenu-vx-col .dropdown-submenu .dropdown-menu:after {
+  display: none;
+}
+/* line 56, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu ul li > a {
+  border-top: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 5xp 0 !important;
+  text-transform: none;
+}
+/* line 62, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu ul li > a:hover, .style-theme_flatize .dropdown-menu ul li > a:focus {
+  color: #1abc9c;
+}
+/* line 66, ../../sass/presets/theme_flatize.scss */
+.style-theme_flatize .dropdown-menu ul li.active > a {
+  color: #1abc9c;
+}
+
+/* line 76, ../../sass/presets/theme_flatize.scss */
+.vertical .dropdown-menu:after {
+  display: none;
+}
+
+@media (max-width: 992px) {
+  /* line 84, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .navbar-collapse {
+    background: #000;
+  }
+  /* line 89, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .nav > li > a {
+    border-color: #282828;
+    color: #fff !important;
+    padding: 10px 20px;
+  }
+  /* line 95, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .nav > li:hover > a, .style-theme_flatize .nav > li:focus > a, .style-theme_flatize .nav > li.open > a, .style-theme_flatize .nav > li.active > a {
+    background: #1abc9c !important;
+    border-color: #282828 !important;
+    box-shadow: none;
+    color: #fff !important;
+  }
+  /* line 100, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .nav > li:hover > a:hover, .style-theme_flatize .nav > li:hover > a:focus, .style-theme_flatize .nav > li:focus > a:hover, .style-theme_flatize .nav > li:focus > a:focus, .style-theme_flatize .nav > li.open > a:hover, .style-theme_flatize .nav > li.open > a:focus, .style-theme_flatize .nav > li.active > a:hover, .style-theme_flatize .nav > li.active > a:focus {
+    border-color: #282828 !important;
+    color: #fff !important;
+  }
+  /* line 108, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .dropdown-menu {
+    background: none;
+    border: none;
+  }
+  /* line 111, ../../sass/presets/theme_flatize.scss */
+  .style-theme_flatize .dropdown-menu:after {
+    display: none;
+  }
+}

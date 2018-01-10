@@ -1,0 +1,120 @@
+@import "../../fonts/futura/stylesheet.css";
+
+.style-theme_business {
+  color: #fff; 
+  .navbar-collapse {
+    background: #222;
+  } 
+  .nav {
+    > li {   
+      border-left: 1px solid #3d3d3d;  
+      > a { 
+        border-left: 1px solid #000;       
+        color: #fff !important;   
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-size: 14px;
+        font-weight: 18px;       
+        padding: 12px 25px;       
+        text-shadow: none; 
+        text-transform: uppercase;
+      }   
+      &:hover, &:focus, &.open, &.active {
+        > a {
+          background: #383838 !important;
+          border-color: #000 !important;         
+        }
+      }
+      &:first-child {
+        border-left: none;
+        > a {
+          border-left: none;
+        }
+      }     
+    }
+  }
+  .dropdown-menu {
+    background-color: #383838;
+    border: none;    
+    font-size: 13px;
+    margin: 0;     
+    .megamenu-vx-row {
+      border-color: #444;
+      .megamenu-vx-col {
+        padding: 15px 20px;
+        .dropdown-submenu {
+          .dropdown-menu {
+            &:after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        > a {
+          border-top-color: #444;
+          color: #ccc;
+          font-size: 13px;         
+          padding: 5xp 0 !important;
+          text-transform: none;
+          &:hover, &:focus {
+            color: #ff5328;
+          }
+        }
+        &.active > a {
+          color: #ff5328;
+        }
+      }
+    }   
+  }
+}
+
+.vertical {  
+  .nav {
+    > li {
+      background: none; 
+      border-top: 1px solid #3d3d3d;
+      border-bottom: 1px solid #000;
+      padding: 0;
+      &:first-child {
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .style-theme_business {
+    .navbar-collapse {
+      background: #000;
+    }
+    .nav {
+      > li {        
+        > a {
+          border-color: #444;
+          color: #fff !important;
+          padding: 10px 20px;
+        }
+        &:hover, &:focus, &.open, &.active {
+          > a {         
+            background: #ff5328 !important;
+            border-color: #444 !important;  
+            color: #fff !important;              
+            &:hover, &:focus {
+              border-color: #444 !important; 
+              color: #fff !important;
+            }
+          }
+        }
+      }      
+    }
+    .dropdown-menu {
+      background: none;
+      border: none;
+    }
+  } 
+}

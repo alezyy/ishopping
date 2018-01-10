@@ -1,0 +1,178 @@
+/* line 1, ../sass/megamenu-vx.scss */
+.megamenu-vx {
+  clear: both;
+  min-height: 0 !important;
+}
+/* line 5, ../sass/megamenu-vx.scss */
+.megamenu-vx .container-fluid,
+.megamenu-vx .navbar-collapse {
+  padding: 0;
+}
+/* line 8, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu {
+  font-size: 1em;
+  min-width: 160px;
+  padding: 0;
+}
+/* line 12, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu ul {
+  padding: 0;
+}
+/* line 14, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu ul > li {
+  list-style: none;
+}
+/* line 16, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu ul > li > a {
+  border-top: 1px solid #eee;
+  display: block;
+  line-height: 20px;
+  font-weight: normal;
+  padding: 5px 0;
+}
+/* line 24, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu ul > li:first-child > a {
+  border-top: none;
+}
+/* line 30, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu ul .submenu-group .megamenu-vx-col {
+  padding: 0;
+}
+/* line 35, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row {
+  border-top: 1px solid #eee;
+}
+/* line 37, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row:first-child {
+  border-top: none;
+}
+/* line 40, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+  padding: 5px 10px;
+}
+/* line 44, ../sass/megamenu-vx.scss */
+.megamenu-vx .dropdown-menu .megamenu-vx-row .dropdown-submenu .dropdown-menu {
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  margin-left: 0;
+}
+
+/* line 56, ../sass/megamenu-vx.scss */
+.vertical .nav > li {
+  display: block;
+  float: none;
+  margin: 0;
+  padding: 0;
+  width: 12em;
+}
+/* line 63, ../sass/megamenu-vx.scss */
+.vertical .nav .dropdown-menu {
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 5px;
+  left: 100%;
+  top: 50%;
+}
+/* line 69, ../sass/megamenu-vx.scss */
+.vertical .nav .caret {
+  border-bottom: 4px solid transparent;
+  border-top-color: transparent;
+  border-right: none;
+  border-left: 4px solid;
+  margin-top: -5px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}
+
+@media (max-width: 992px) {
+  /* line 83, ../sass/megamenu-vx.scss */
+  .megamenu-vx {
+    clear: both;
+    height: 100%;
+    position: relative;
+  }
+  /* line 87, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-header {
+    float: none;
+    position: relative;
+  }
+  /* line 90, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-header .navbar-toggle {
+    display: block;
+    float: left;
+    margin: 0;
+  }
+  /* line 96, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-collapse.collapse {
+    display: none !important;
+  }
+  /* line 99, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-collapse.collapsing {
+    display: block;
+  }
+  /* line 102, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-collapse.collapse.in {
+    display: block !important;
+    overflow-y: hidden;
+    max-height: 20000px;
+  }
+  /* line 107, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar {
+    min-height: 0;
+  }
+  /* line 112, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li {
+    display: block;
+    float: none;
+  }
+  /* line 115, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li > a {
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+  }
+  /* line 121, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li > a .caret {
+    margin-top: -3px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+  }
+  /* line 129, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li:first-child > a {
+    border-top: none;
+  }
+  /* line 134, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li.open > a {
+    border-color: #eee;
+  }
+  /* line 136, ../sass/megamenu-vx.scss */
+  .megamenu-vx .nav > li.open > a:hover, .megamenu-vx .nav > li.open > a:focus {
+    border-color: #eee;
+  }
+  /* line 143, ../sass/megamenu-vx.scss */
+  .megamenu-vx .navbar-collapse {
+    border-top: none;
+  }
+  /* line 146, ../sass/megamenu-vx.scss */
+  .megamenu-vx .dropdown-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+    display: block !important;
+    float: none;
+    left: auto;
+    position: static !important;
+    top: auto;
+    width: 100% !important;
+    transform: none !important;
+  }
+  /* line 159, ../sass/megamenu-vx.scss */
+  .megamenu-vx .dropdown-menu .dropdown-submenu a {
+    border-top: none;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

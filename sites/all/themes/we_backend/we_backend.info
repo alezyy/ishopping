@@ -1,0 +1,31 @@
+name = WeebPal Backend theme
+description = Backend theme from WeebPal
+version = VERSION
+core = 7.x
+engine = 'phptemplate'
+
+; CSS - General
+stylesheets[all][] = assets/css/style.css
+
+; Javascript
+scripts[] = assets/js/scripts.js
+
+features[] = 'logo'
+features[] = 'name'
+features[] = 'slogan'
+features[] = 'node_user_picture'
+features[] = 'comment_user_picture'
+features[] = 'comment_user_verification'
+features[] = 'favicon'
+
+regions[header] = Header
+regions[highlighted] = Highlighted
+regions[help] = Help
+regions[content] = Content
+regions[sidebar_first] = Sidebar first
+regions[sidebar_second] = Sidebar second
+regions[footer] = Footer
+
+
+
+

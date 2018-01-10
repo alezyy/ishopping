@@ -1,0 +1,98 @@
+@import "../../fonts/robotoslab/stylesheet.css";
+
+.style-style_classic {
+  color: #f1dec6;
+  .navbar-collapse {
+    background: #210c02;
+  } 
+  
+  .nav {
+    > li {
+      border-left: 1px solid #381301;
+      > a {
+        color: #f1dec6 !important;   
+        font-family: 'roboto_slabregular';
+        font-size: 13px;
+        font-weight: bold;        
+        padding: 12px 25px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {
+          background: #52250f !important;
+          color: #fff;
+        }
+      }     
+    }
+  }
+  .dropdown-menu {
+    background: #52250f;
+    border-radius: 0;
+    margin: 0;
+    min-width: 160px;
+    padding: 0;  
+    .megamenu-vx-row {
+      border-color: #381301;
+      .dropdown-submenu {
+        .dropdown-menu {
+          border-radius: 0;
+        }
+      }
+    }
+    ul {
+      li {
+        > a {
+          border-top-color: #381301;
+          color: #f1dec6;
+          float: none;
+          font-family: Arial,Helvetica,sans-serif;
+          line-height: normal;
+          margin: 0 -10px;
+          padding: 8px 10px !important;
+          text-transform: none;
+          &:hover, &:focus {
+            background: #210c02;
+            color: #fff;
+          }
+        }
+        &.active > a {
+          background: #210c02;
+          color: #fff;
+        }
+      }
+    }   
+  }
+}
+
+@media (max-width: 992px) {
+  .style-style_classic {
+    .nav {
+      > li {        
+        > a {
+          border-color: #381301;
+        }
+        &.open {
+          a {
+            border-color: #381301 !important;
+          }
+        }
+      }
+      &:hover, &:focus, &.open, &.active {
+        > a {         
+          border-color: #381301;                
+          &:hover, &:focus {
+            border-color: #381301; 
+          }
+        }
+      }
+    }
+    .dropdown-menu {
+      background: none;
+      border: none;
+    }
+  } 
+}

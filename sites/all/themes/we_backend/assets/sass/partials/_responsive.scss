@@ -1,0 +1,190 @@
+// 1200
+@media (min-width: $desktop) {}
+
+// 1199
+@media (max-width: $desktop - 1) {}
+
+// 992 - 1199
+@media (min-width: $tablet-ht) and (max-width: $desktop - 1) {}
+
+// 991
+@media (max-width: $tablet-ht - 1) {
+    #page {
+        padding-left: 0;
+        right: 0;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        position: relative;
+        margin-right: 0;
+    }
+    #page.toggled {
+        @include sizeRem(right, 250);
+        .btn-close {
+            display: block;
+        }
+        .navbar-toggle {
+            visibility: hidden;
+        }
+    }
+    .btn-close {
+        display: none;
+        @include border-radius(50%);
+        background: url('../images/btn-close.png') no-repeat center center #ccc;
+        @include box-shadow(0 12px 27px rgba(0, 0, 0, 0.15));
+        cursor: pointer;
+        position: absolute;
+        @include sizeRem(right, 8);
+        @include sizeRem(top, 15);
+        @include sizeRem(width, 48);
+        @include sizeRem(height, 48);
+        z-index: 999;
+    }
+   .navbar-toggle {
+        border: none;
+        display: block;
+        padding: 0;
+        @include border-radius(0);
+        @include sizeRem(margin-top, 65);
+        @include sizeRem(margin-left, 15);
+        float: left;
+        .icon-bar {
+            background: $link-color;
+        }
+        &:hover,
+        &:focus {
+            background: none;
+            .icon-bar {
+                background: darken($link-color, 8%);
+            }
+        }
+    }
+    #page.toggled .mobile-main-menu {
+        right: 0;
+        display: block;
+    }
+    .overlay {
+        cursor: pointer;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 999;
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100%;
+    }
+    .nav {
+        .open > a {
+            background: none;
+            &:hover,
+            &:focus {
+                background: none;
+            }
+        }
+    }
+    .mobile-main-menu {
+        background: #fff;
+        bottom: 0;
+        display: block !important;
+        height: 100%;
+        overflow-y: auto !important;
+        position: fixed;
+        @include sizeRem(right, -250);
+        @include sizeRem(width, 250);
+        top: 0;
+        z-index: 1000;
+        transition: all 0.5s ease-in-out;
+        -webkit-transition: all 0.5s ease-in-out;
+        -moz-transition: all 0.5s ease-in-out;
+        -o-transition: all 0.5s ease-in-out;
+        .container {
+            padding: 0;
+            position: static;
+            width: auto;
+        }
+        /* main-menu */
+        ul {
+            padding: 0;
+            margin: 0;
+            a {
+                display: block;
+                color: #000;
+                padding-left: 0;
+                padding-right: 0;
+                @include sizeRem(padding-top, 10);
+                @include sizeRem(padding-bottom, 10);
+                text-decoration: none;
+                &:hover,
+                &:focus {
+                    color: #555;
+                }
+                &.is-active {
+                    color: #555;
+                }
+            }
+            > li {
+                border-bottom: 1px solid #ddd;
+                display: block;
+                float: none;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                &:last-child {
+                    border-bottom: none;
+                }
+                ul {
+                    @include sizeRem(padding-left, 20);
+                    @include sizeRem(padding-bottom, 5);
+                    li {
+                        border-bottom: 0;
+                        a {
+                            padding:{
+                                left: 0;
+                                right: 0;
+                                @include sizeRem(top, 7);
+                                @include sizeRem(bottom, 7);    
+                            }
+                        }
+                    }
+                }
+            }
+            .expanded {
+                > a {
+                    position: relative;
+                    &:before {
+                        // @include nucleo_glyph;
+                        // content: '\ea91';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        @include sizeRem(width, 20);
+                        @include sizeRem(height, 20);
+                        @include sizeRem(margin-top, -10);
+                        line-height: 1.3;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+    // end Mobile-menu
+}
+
+// 768 - 991
+@media (min-width: $tablet-vt) and (max-width: $tablet-ht - 1) {}
+
+// 767
+@media (max-width: $tablet-vt - 1) {}
+
+// 640
+@media (max-width: $mobile) {}
+
+// 480
+@media (max-width: $mobile-md) {}
+
+// 360
+@media (max-width: $mobile-sm) {}
+
+// 320
+@media (max-width: $mobile-xs) {}

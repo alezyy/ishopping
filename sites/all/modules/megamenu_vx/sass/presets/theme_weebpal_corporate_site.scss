@@ -1,0 +1,126 @@
+@import "../../fonts/oswald_regular/stylesheet.css";
+
+.style-theme_weebpal_corporate_site {
+	color: #ad9457;
+	.navbar-collapse {
+		background: url("../../images/presets/corporate-site/bg-menu.gif") repeat-x 0 100%;
+	  box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.25);
+    height: 41px;
+	}	
+	.nav {
+		> li {			
+  		background: url("../../images/presets/corporate-site/bg-line-menu.gif") no-repeat 0 0;
+  		padding-left: 2px;
+  		> a {  
+  			color: #fff !important;			
+			  font-family: Corbel, Arial, Helvetica, sans-serif;
+			  font-weight: 700;
+			  text-shadow: none;
+			  text-transform: uppercase;
+			  padding: 9px 20px;
+  		}
+  		&:first-child {
+  			background: none;
+  			padding-left: 0;
+  		}
+  		&:hover, &:focus, &.open, &.active {
+  			> a {
+  				background: url("../../images/presets/corporate-site/bg-menu-active.gif") repeat-x 0 100% !important;  
+  				color: #fff !important;			 
+  			}
+  		}  		
+		}
+	}
+	.dropdown-menu {
+	  border: 2px solid #625129;
+		background: url(../../images/presets/corporate-site/bg-submenu.gif) repeat-x 0 0 #010101;	
+		border-top-width: 1px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+	  min-width: 160px;		  
+	  .megamenu-vx-row {
+	  	border-color: #625129;
+	  }
+	  ul {
+			li {
+		  	> a {
+				  border-top-color: #625129;
+				  color: #ad9457;
+				  float: none;
+				  font-family: Corbel, Arial, Helvetica, sans-serif;
+				  font-weight: 700;
+				  line-height: normal;
+				  margin: 0 -10px;
+				  padding: 8px 10px !important;
+				  text-transform: none;
+				  &:hover, &:focus {
+				  	color: #e0c06f;
+				  }
+				}
+				&.active > a {
+					color: #e0c06f;
+				}
+		  }
+	  }	  
+	}
+}
+
+.vertical {
+	.navbar-collapse {
+		background: none;
+	}
+	.nav {
+		> li {
+			background: none;			
+			padding: 0;
+			> a {
+				color: #a22c08 !important;
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.style-theme_weebpal_corporate_site {		
+		.navbar-collapse {
+			background: #171717;
+		}
+		.nav {
+			> li {
+				background: none;				
+				> a {
+					border-color: #0c0c0c;
+					color: #696969 !important;		
+					text-shadow: none;				
+				}
+				&:hover, &:focus, &.open, &.active {
+	  			> a {
+	  				background: #2d2d2d !important;  
+	  				border-color: #0c0c0c;
+	  				color: #fff !important;			 
+	  				&:hover, &:focus {
+	  					border-color: #0c0c0c;
+	  				}
+	  			}
+	  		}
+	  		.dropdown-menu {
+					background: none;
+					border: none;
+					box-shadow: none;
+					.megamenu-vx-row {
+						.megamenu-vx-col {
+							border-top: 1px solid #0c0c0c;
+							&:first-child {
+								border-top: none;
+							}
+						}				  	
+				  }
+					li {
+						> a {
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}	
+}

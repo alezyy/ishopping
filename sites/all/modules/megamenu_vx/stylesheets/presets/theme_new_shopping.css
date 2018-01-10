@@ -1,0 +1,105 @@
+@import url(../../fonts/futura/stylesheet.css);
+/* line 3, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping {
+  color: #fff;
+}
+/* line 5, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .navbar-collapse {
+  background: #000;
+}
+/* line 10, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .nav > li > a {
+  border-left: 1px solid #393737;
+  color: #fff !important;
+  font-family: 'futura_lt_btlight';
+  font-size: 18px;
+  font-weight: normal;
+  padding: 10px 15px;
+  text-shadow: none;
+  text-transform: uppercase;
+}
+/* line 21, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .nav > li:hover > a, .style-theme_new_shopping .nav > li:focus > a, .style-theme_new_shopping .nav > li.open > a, .style-theme_new_shopping .nav > li.active > a {
+  background: none !important;
+  border-color: #393737 !important;
+  color: #e21a2c !important;
+}
+/* line 28, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .nav > li:first-child > a {
+  border-left: none;
+}
+/* line 34, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu {
+  background-color: #000;
+  border: none;
+  font-size: 12px;
+  margin: 0;
+}
+/* line 39, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu .megamenu-vx-row {
+  border-color: #393737;
+}
+/* line 41, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+  padding: 15px 20px;
+}
+/* line 45, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu .megamenu-vx-row .megamenu-vx-col .dropdown-submenu .dropdown-menu:after {
+  display: none;
+}
+/* line 54, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu ul li > a {
+  border-top: none;
+  color: #fff;
+  font-size: 12px;
+  padding: 5xp 0 !important;
+  text-transform: none;
+}
+/* line 60, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu ul li > a:hover, .style-theme_new_shopping .dropdown-menu ul li > a:focus {
+  color: #e21a2c;
+}
+/* line 64, ../../sass/presets/theme_new_shopping.scss */
+.style-theme_new_shopping .dropdown-menu ul li.active > a {
+  color: #e21a2c;
+}
+
+/* line 74, ../../sass/presets/theme_new_shopping.scss */
+.vertical .nav > li {
+  background: none;
+  border-top: 1px solid #393737;
+  padding: 0;
+}
+/* line 78, ../../sass/presets/theme_new_shopping.scss */
+.vertical .nav > li:first-child {
+  border-top: none;
+}
+
+@media (max-width: 992px) {
+  /* line 88, ../../sass/presets/theme_new_shopping.scss */
+  .style-theme_new_shopping .navbar-collapse {
+    background: #000;
+  }
+  /* line 93, ../../sass/presets/theme_new_shopping.scss */
+  .style-theme_new_shopping .nav > li > a {
+    border-color: #393737;
+    color: #fff !important;
+    padding: 10px 20px;
+  }
+  /* line 99, ../../sass/presets/theme_new_shopping.scss */
+  .style-theme_new_shopping .nav > li:hover > a, .style-theme_new_shopping .nav > li:focus > a, .style-theme_new_shopping .nav > li.open > a, .style-theme_new_shopping .nav > li.active > a {
+    background: #e21a2c !important;
+    border-color: #393737 !important;
+    color: #fff !important;
+  }
+  /* line 103, ../../sass/presets/theme_new_shopping.scss */
+  .style-theme_new_shopping .nav > li:hover > a:hover, .style-theme_new_shopping .nav > li:hover > a:focus, .style-theme_new_shopping .nav > li:focus > a:hover, .style-theme_new_shopping .nav > li:focus > a:focus, .style-theme_new_shopping .nav > li.open > a:hover, .style-theme_new_shopping .nav > li.open > a:focus, .style-theme_new_shopping .nav > li.active > a:hover, .style-theme_new_shopping .nav > li.active > a:focus {
+    border-color: #393737 !important;
+    color: #fff !important;
+  }
+  /* line 111, ../../sass/presets/theme_new_shopping.scss */
+  .style-theme_new_shopping .dropdown-menu {
+    background: none;
+    border: none;
+  }
+}

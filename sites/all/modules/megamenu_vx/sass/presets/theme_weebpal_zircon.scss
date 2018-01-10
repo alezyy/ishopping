@@ -1,0 +1,114 @@
+@import "../../fonts/oswald_regular/stylesheet.css";
+
+.style-theme_weebpal_zircon {
+	color: #aaa;
+	.navbar-collapse {
+		background: url("../../images/presets/zircon/bg-nav.gif") repeat-x scroll 0 0 #282a2c;
+	  border-radius: 5px;   
+	  position: relative;
+	  z-index: 499;
+		margin-bottom: 0;
+	}	
+	
+	.nav {
+		> li {
+			background: url("../../images/presets/zircon/bg-line-nav.gif") no-repeat 0 0;
+  		padding-left: 1px;
+  		> a {
+  			color: #d9d9d9 !important;
+			  border-right: none;
+			  font-family: 'oswaldregular';
+			  font-size: 13px;
+			  font-weight: normal;
+			  line-height: 21px;
+			  padding: 12px 25px;
+			  text-decoration: none;
+			  text-transform: uppercase;
+  		}
+  		&:first-child {
+  			background: none;
+  			padding-left: 0;
+  		}
+  		&:hover, &:focus, &.open, &.active {
+  			> a {
+  				background: url("../../images/presets/zircon/bg-nav-active.gif") repeat-x scroll 0 0 #a01300;
+  			  color: #fff !important;
+  			}
+  		}  		
+		}
+	}
+	.dropdown-menu {
+	  background: #2f2f2f;
+	  border: 5px solid #a01300;
+	  margin: 0;
+	  min-width: 160px;
+	  padding: 0;
+	  position: absolute;	 
+	  .megamenu-vx-row {
+	  	border-color: #444;
+	  }
+	  ul {
+			li {
+		  	> a {
+				  border-top-color: #444;
+				  color: #aaa;
+				  float: none;
+				  font-family: Arial,Helvetica,sans-serif;
+				  line-height: normal;
+				  margin: 0 -10px;
+				  padding: 8px 10px !important;
+				  text-transform: none;
+				  &:hover, &:focus {
+				  	color: #fff;
+				  }
+				}
+        &.active > a {
+          color: #fff;
+        }
+		  }
+	  }	  
+	}
+}
+
+.vertical {  
+  .nav {
+    > li {
+      background: none;     
+      padding: 0;
+      &:first-child {
+        > a {
+          border-radius: 5px 5px 0 0;
+        }
+      }
+      &:last-child {
+        > a {
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+	.style-theme_weebpal_zircon {
+		.nav {
+			> li {				
+				> a {
+					border-color: #444;
+				}
+			}
+			&:hover, &:focus, &.open, &.active {
+  			> a {  				
+  				border-color: #444;    						 
+  				&:hover, &:focus {
+  					border-color: #444; 
+  				}
+  			}
+  		}
+		}
+		.dropdown-menu {
+			background: none;
+			border: none;
+		}
+	}	
+}

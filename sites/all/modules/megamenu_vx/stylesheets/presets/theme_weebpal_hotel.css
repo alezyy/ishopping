@@ -1,0 +1,106 @@
+@import url(../../fonts/oswald_regular/stylesheet.css);
+/* line 3, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel {
+  color: #fff;
+}
+/* line 5, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .navbar-collapse {
+  background: #514332;
+}
+/* line 9, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .nav > li {
+  margin: 0;
+  padding-right: 1px;
+}
+/* line 12, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .nav > li > a {
+  color: #fff !important;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 16px;
+  padding: 11px 20px;
+  text-shadow: none;
+}
+/* line 19, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .nav > li:last-child {
+  background: none;
+  padding-right: 0;
+}
+/* line 24, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .nav > li:hover > a, .style-theme_weebpal_hotel .nav > li:focus > a, .style-theme_weebpal_hotel .nav > li.open > a, .style-theme_weebpal_hotel .nav > li.active > a {
+  background: #905c14 !important;
+  color: #fff !important;
+}
+/* line 31, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .dropdown-menu {
+  background: #905c14;
+}
+/* line 33, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .dropdown-menu .megamenu-vx-row {
+  border-color: #a86a15;
+}
+/* line 38, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .dropdown-menu ul li > a {
+  border-top-color: #a86a15;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: normal;
+  margin: 0 -10px;
+  padding: 8px 10px !important;
+  text-transform: none;
+}
+/* line 46, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .dropdown-menu ul li > a:hover, .style-theme_weebpal_hotel .dropdown-menu ul li > a:focus {
+  background: #6d440c;
+  color: #fff;
+}
+/* line 51, ../../sass/presets/theme_weebpal_hotel.scss */
+.style-theme_weebpal_hotel .dropdown-menu ul li.active > a {
+  background: #6d440c;
+  color: #fff;
+}
+
+/* line 62, ../../sass/presets/theme_weebpal_hotel.scss */
+.vertical .nav > li {
+  border-bottom: 1px solid #5f4f3c;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 992px) {
+  /* line 73, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li {
+    background: none;
+  }
+  /* line 75, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li > a {
+    color: #fff;
+    border-color: #a86a15;
+    font-size: 14px;
+    text-shadow: none;
+  }
+  /* line 82, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li:hover > a, .style-theme_weebpal_hotel .nav > li:focus > a, .style-theme_weebpal_hotel .nav > li.open > a, .style-theme_weebpal_hotel .nav > li.active > a {
+    background: #905c14;
+    border-color: #a86a15;
+    color: #fff !important;
+  }
+  /* line 86, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li:hover > a:hover, .style-theme_weebpal_hotel .nav > li:hover > a:focus, .style-theme_weebpal_hotel .nav > li:focus > a:hover, .style-theme_weebpal_hotel .nav > li:focus > a:focus, .style-theme_weebpal_hotel .nav > li.open > a:hover, .style-theme_weebpal_hotel .nav > li.open > a:focus, .style-theme_weebpal_hotel .nav > li.active > a:hover, .style-theme_weebpal_hotel .nav > li.active > a:focus {
+    background: #905c14;
+    border-color: #a86a15;
+  }
+  /* line 92, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li .dropdown-menu {
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  /* line 97, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li .dropdown-menu .megamenu-vx-row .megamenu-vx-col {
+    border-top: 1px solid #a86a15;
+  }
+  /* line 99, ../../sass/presets/theme_weebpal_hotel.scss */
+  .style-theme_weebpal_hotel .nav > li .dropdown-menu .megamenu-vx-row .megamenu-vx-col:first-child {
+    border-top: none;
+  }
+}
